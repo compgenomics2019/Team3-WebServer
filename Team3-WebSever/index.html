@@ -3,7 +3,7 @@
 		<meta charset="utf-8">
 		<title>Webserver</title>
 		<style>
-			body{ background-color: DimGray;margin:0px; position:relative;}
+			body{ background-color: DimGray;margin:0px; }
 			div#top{ background-color: Sienna; height:73px; font-size:36px; padding:20px 0px 0px 20px; fill: gray;position:relative;}
 			div#middle{ background-color: DimGray; min-width:800px; position:relative;}
 			div#middle > div{ 
@@ -24,8 +24,43 @@
 											<!-- transform: translate(-50%, -50%); -->
 			}
 			div#middle > div > div > img{ background-color: DimGray;  width:100%;position:relative; }
-			div#bottom{ background-color: white; clear:left;height:600px;position:relative;}
+			div#bottom{ 
+								background-color: white; 
+								clear:left;height:600px;
+								position:relative;
+								width: 100%;
+								display: table;
+			}
+			<!-- div#col2 { -->
+				<!-- background-color:green; -->
+						<!-- border:2px solid green; -->
+						<!-- width:49%; -->
+						<!-- float:left; -->
+						<!-- height:100%; -->
+						<!-- margin-right:2%; -->
+				<!-- display:inline; -->
+			<!-- } -->
+			<!-- div#col2:last-child {margin-right:0;  } -->
+			<!-- div#col3 { -->
+				<!-- background-color:orange; -->
+				<!-- border:2px solid green; -->
+				<!-- width:49%; -->
+				<!-- float:right; -->
+				<!-- height:100%; -->
+				<!-- margin-right:0; -->
+				<!-- display:inline; -->
+			<!-- } -->
 			
+			div#lhs {
+							width: 50%;
+							min-width:400px;
+							display: table-cell;
+							background-color: green;
+			}
+			div#rhs {
+							display: table-cell;
+							background-color: orange;
+			}
 		</style>
 		
 	</head>
@@ -45,6 +80,11 @@
 		
 	</body>
 	
-		<div id="bottom"></div>
+		<div id="bottom">
+		
+			<div id="lhs">Left</div>
+			<div id="rhs">Right</div>
+
+		</div>
 	
 </html>
