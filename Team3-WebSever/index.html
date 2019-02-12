@@ -4,6 +4,7 @@
 		<title>Webserver</title>
 		<style>
 			body{ background-color: DimGray;margin:0px; }
+			a {text-decoration: none}
 			div#top{ background-color: Sienna; height:73px; font-size:36px; padding:20px 0px 0px 20px; fill: gray;position:relative;}
 			div#middle{ background-color: DimGray; min-width:800px; position:relative;}
 			div#middle > div{ 
@@ -99,6 +100,13 @@
 									height: 20% ;
 			}
 			
+			a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+			
 		</style>
 		
 	</head>
@@ -121,13 +129,13 @@
 		<div id="bottom">
 		
 			<div id="lhs">
-				<a href="genome_assembly.html"><div id="lhsRow1"><div id="verticalCenterText">Genome Assembly</div></div></a>
-				<div id="lhsRow2"><div id="verticalCenterText">Gene Prediction</div></div>
+				<div id="lhsRow1"><div id="verticalCenterText"><a href="genome_assembly.html">Genome Assembly</a></div><a href="genome_assembly.html" class="fill-div"></a></div>
+				<div id="lhsRow2"><div id="verticalCenterText"><a href="genome_assembly.html">Gene Prediction</a></div><a href="genome_assembly.html" class="fill-div"></a></div>
 			</div>
 			
 			<div id="rhs">
-				<div id="lhsRow1"><div id="verticalCenterText">Functional Annotation</div></div>
-				<div id="lhsRow2"><div id="verticalCenterText">Comparitive Genomics</div></div>
+				<div id="lhsRow1"><div id="verticalCenterText"><a href="genome_assembly.html">Functional Annotation</a></div><a href="genome_assembly.html" class="fill-div"></a></div>
+				<div id="lhsRow2"><div id="verticalCenterText"><a href="genome_assembly.html">Comparitive Genomics</a></div><a href="genome_assembly.html" class="fill-div"></a></div>
 			</div>
 
 		</div>
