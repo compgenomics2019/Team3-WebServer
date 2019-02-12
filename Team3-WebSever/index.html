@@ -70,7 +70,33 @@
 									float: center;
 									width: 75%;
 									margin: auto;
+									margin-top: 20%;
+									text-align: center;
+									height: 20% ;
+									<!-- display: inline-block; -->
+									<!-- padding-top: 50px; -->
+									<!-- padding-bottom: 50px; -->
 			
+			}
+
+			div#verticalCenterText {
+													margin: 0;
+													position: relative;
+													top: 50%;
+													left: 50%;
+													transform: translate(-50%, -50%);
+			}
+			
+			div#lhsRow2 {
+									vertical-align: middle;
+									background-color: white;
+									text-align: center;
+									float: center;
+									width: 75%;
+									margin: auto;
+									margin-top: 20%;
+									text-align: center;
+									height: 20% ;
 			}
 			
 		</style>
@@ -94,8 +120,15 @@
 	
 		<div id="bottom">
 		
-			<div id="lhs">Left<div id="lhsRow1">Row1</div></div>
-			<div id="rhs">Right</div>
+			<div id="lhs">
+				<a href="genome_assembly.html"><div id="lhsRow1"><div id="verticalCenterText">Genome Assembly</div></div></a>
+				<div id="lhsRow2"><div id="verticalCenterText">Gene Prediction</div></div>
+			</div>
+			
+			<div id="rhs">
+				<div id="lhsRow1"><div id="verticalCenterText">Functional Annotation</div></div>
+				<div id="lhsRow2"><div id="verticalCenterText">Comparitive Genomics</div></div>
+			</div>
 
 		</div>
 	
