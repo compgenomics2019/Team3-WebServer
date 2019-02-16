@@ -4,22 +4,82 @@
 	<meta charset="utf-8">
 	<title>JBrowse</title>
 	<style>
-		
+				html {
+					height: 100%;
+				}
+			body{ 
+					height: 100%;
+					width: 100%;
+					background-color: DimGray;
+					margin:0px; 
+			}
+			a {
+				text-decoration: none
+			}
+			a:visited {
+							color: black;
+			}
+			div#top{ 
+							background-color: #232121; 
+							height:30px;
+							margin: auto;
+							font-size:36px; 
+							padding:20px 0px 0px 20px; 
+							fill: gray;
+							position:relative;
+							clear: left;
+							vertical-align: top;
+			}
+			div#topLinks1 {
+							height: 100%;
+							float: center;
+							width: 100%;
+							display: table-cell;
+							color: white;
+							vertical-align: middle;
+			}
+			div#top > div{
+				height: 100%;
+				color: white;
+				width: 20%;
+				display: inline-block;
+			}
 	</style>
 	</head>
 
 	<body>
 		
-		<div style="width: 800px; margin: 0 auto;">
-      <iframe
-        src="test/jbrowse/index.html?data=sample_data/json/volvox&tracklist=0&nav=0&overview=0&tracks=DNA%2CExampleFeatures%2CNameTest%2CMotifs%2CAlignments%2CGenes%2CReadingFrame%2CCDS%2CTranscript%2CClones%2CEST"
-        style="border: 1px solid black"
-        width="800"
+		<div id="top">
+			<div style="transform: translate(-0%, -50%);">About</div>
+			<div style="transform: translate(-0%, -50%);">JBrowse</div>
+		</div>
+		
+		
+		<!-- <div style="width: 800px; margin: 0 auto;"> -->
+      <!-- <iframe -->
+        <!-- src="jbrowse/index.html?data=sample_data/json/volvox&tracklist=0&nav=0&overview=0&tracks=DNA%2CExampleFeatures%2CNameTest%2CMotifs%2CAlignments%2CGenes%2CReadingFrame%2CCDS%2CTranscript%2CClones%2CEST" -->
+        <!-- style="border: 1px solid black" -->
+        <!-- width="800" -->
+        <!-- height="400" -->
+        <!-- > -->
+		
+		      <!-- <iframe -->
+        <!-- src="jbrowse/index.html?data=sample_data/json/volvox" -->
+        <!-- style="border: 1px solid black" -->
+        <!-- width="800" -->
+        <!-- height="400" -->
+        <!-- > -->
+		
+      <!-- </iframe> -->
+    <!-- </div> -->
+				      <iframe
+        src="jbrowse/index.html?data=sample_data/json/volvox"
+        style="border: 0px solid black"
+        width="100%"
         height="400"
         >
-      </iframe>
-    </div>
 		
+      </iframe>
 		
 		
 	</body>
