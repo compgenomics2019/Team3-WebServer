@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <head>
+	
+	<link rel="icon" href="hex.jpg">
 		<meta charset="utf-8">
 		<title>Webserver</title>
 		<style>
 		html {
-    height: 100%;
-}
-			body{ height: 100%;background-color: DimGray;margin:0px; }
-			a {text-decoration: none}
-			a:visited {text-decoration: none}
-			div#top{ background-color: #232121; height:30px; font-size:36px; padding:20px 0px 0px 20px; fill: gray;position:relative;}
-			div#middle{ background-color: DimGray; min-width:800px; position:relative;}
+					height: 100%;
+				}
+			body{ 
+					height: 100%;
+					background-color: DimGray;
+					margin:0px; 
+			}
+			a {
+				text-decoration: none
+			}
+			a:visited {
+							color: black;
+			}
+			div#top{ 
+							background-color: #232121; 
+							height:30px;
+							margin: auto;
+							font-size:36px; 
+							padding:20px 0px 0px 20px; 
+							fill: gray;
+							position:relative;
+							clear: left;
+							vertical-align: top;
+			}
+			div#topLinks1 {
+							height: 100%;
+							float: center;
+							width: 100%;
+							display: table-cell;
+							color: white;
+							vertical-align: middle;
+			}
+			div#top > div{
+				height: 100%;
+				color: white;
+				width: 20%;
+				display: inline-block;
+			}
+			
+			div#middle{ 
+								background-color: 
+								DimGray; min-width:800px; 
+								position:relative;
+			}
 			div#middle > div{ 
 											background-color: DimGray;  
 											width:25%; 
@@ -28,7 +67,11 @@
 											<!-- /* bring your own prefixes */ -->
 											<!-- transform: translate(-50%, -50%); -->
 			}
-			div#middle > div > div > img{ background-color: DimGray;  width:100%;position:relative; }
+			div#middle > div > div > img{ 
+															background-color: DimGray;  
+															width:100%;
+															position:relative; 
+			}
 			div#bottom{ 
 								background-color: white; 
 								clear:left;height:600px;
@@ -36,25 +79,6 @@
 								width: 100%;
 								display: table;
 			}
-			<!-- div#col2 { -->
-				<!-- background-color:green; -->
-						<!-- border:2px solid green; -->
-						<!-- width:49%; -->
-						<!-- float:left; -->
-						<!-- height:100%; -->
-						<!-- margin-right:2%; -->
-				<!-- display:inline; -->
-			<!-- } -->
-			<!-- div#col2:last-child {margin-right:0;  } -->
-			<!-- div#col3 { -->
-				<!-- background-color:orange; -->
-				<!-- border:2px solid green; -->
-				<!-- width:49%; -->
-				<!-- float:right; -->
-				<!-- height:100%; -->
-				<!-- margin-right:0; -->
-				<!-- display:inline; -->
-			<!-- } -->
 			
 			div#lhs {
 							width: 50%;
@@ -73,7 +97,6 @@
 									border-radius: 15px;
 									border-width: 2px;
 									border-style: solid;
-									<!-- border-color: CornflowerBlue; -->
 									vertical-align: middle;
 									background-color: white;
 									text-align: center;
@@ -88,6 +111,7 @@
 									<!-- display: inline-block; -->
 									<!-- padding-top: 50px; -->
 									<!-- padding-bottom: 50px; -->
+									<!-- border-color: CornflowerBlue; -->
 			
 			}
 
@@ -97,9 +121,8 @@
 													top: 50%;
 													left: 50%;
 													transform: translate(-50%, -50%);
-													
-									text-align: center;
-									vertical-align: middle;
+													text-align: center;
+													vertical-align: middle;
 			}
 			
 			a.fill-div {
@@ -134,14 +157,14 @@
 			}
 			
 						div#textBox {
-													background-color: rgb(56, 49, 39,  0.9);
-													margin: 0;
-													position: relative;
-													top: 50%;
-													left: 50%;
-													transform: translate(-50%, -50%);
-									text-align: center;
-									vertical-align: bottom;
+												background-color: rgb(56, 49, 39,  0.9);
+												margin: 0;
+												position: relative;
+												top: 50%;
+												left: 50%;
+												transform: translate(-50%, -50%);
+												text-align: center;
+												vertical-align: bottom;
 			}
 			
 		</style>
@@ -149,7 +172,12 @@
 	</head>
 	
 	<body>
-		<div id="top"></div>
+		<div id="top">
+			<div style="transform: translate(-0%, -50%);">About</div>
+			<div style="transform: translate(-0%, -50%);">JBrowse</div>
+			<!-- <div id="topLinks1" style="transform: translate(-0%, -50%);"></div> -->
+			<!-- <div id="topLinks1" style="transform: translate(00%, -50%);">JBrowse</div> -->
+		</div>
 		
 			<div class="bg">
 			<div id="textBox"  style="font-size: 60px; color: orange;">Predictive Genomics
@@ -175,7 +203,7 @@
 		
 			<div id="lhs">
 				<div id="box"><div id="verticalCenterText"><a href="genome_assembly.html" class="fill-div">Genome Assembly</a></div><a href="genome_assembly.html" class="fill-div"></a></div>
-				<div id="box"><div id="verticalCenterText"><a href="genome_assembly.html" class="fill-div">Gene Prediction</a></div><a href="genome_assembly.html" class="fill-div"></a></div>
+				<div id="box"><div id="verticalCenterText"><a href="genome_assembly.html" class="fill-div">JBrowse</a></div><a href="jbrowse.html" class="fill-div"></a></div>
 			</div>
 			
 			<div id="rhs">

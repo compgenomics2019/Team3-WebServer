@@ -1,14 +1,189 @@
 <!DOCTYPE html>
 <head>
+	<link rel="icon" href="hex.jpg">
 		<meta charset="utf-8">
 		<title>Genome Assembly</title>
 		<style>
-		
+		html {
+					height: 100%;
+				}
+			body{ 
+					height: 100%;
+					margin:0px; 
+			}
+			a {
+				text-decoration: none
+			}
+			a:visited {
+							color: black;
+			}
+			div#top{ 
+							background-color: #232121; 
+							height:30px;
+							margin: auto;
+							font-size:36px; 
+							padding:20px 0px 0px 20px; 
+							fill: gray;
+							position:relative;
+							clear: left;
+							vertical-align: top;
+			}
+			div#topLinks1 {
+							height: 100%;
+							float: center;
+							width: 100%;
+							display: table-cell;
+							color: white;
+							vertical-align: middle;
+			}
+			div#top > div{
+				height: 100%;
+				color: white;
+				width: 20%;
+				display: inline-block;
+			}
+			
+			div#middle{ 
+								background-color: 
+								DimGray; min-width:800px; 
+								position:relative;
+			}
+			div#middle > div{ 
+											background-color: DimGray;  
+											width:25%; 
+											
+											display:block;
+											margin:auto;
+											height: 100%;
+											vertical-align: middle;
+											position:relative;
+											padding-top: 100px;
+											padding-bottom:100px;
+											<!-- position: relative; -->
+											<!-- top: 50%; -->
+											<!-- left: 50%; -->
+											<!-- /* bring your own prefixes */ -->
+											<!-- transform: translate(-50%, -50%); -->
+			}
+			div#middle > div > div > img{ 
+															background-color: DimGray;  
+															width:100%;
+															position:relative; 
+			}
+			div#bottom{ 
+								background-color: white; 
+								clear:left;height:600px;
+								position:relative;
+								width: 100%;
+								display: table;
+			}
+			
+			div#lhs {
+							width: 50%;
+							min-width:400px;
+							display: table-cell;
+								<!-- background-color:green; -->
+			}
+			div#rhs {
+							width: 50%;
+							min-width:400px;
+							display: table-cell;
+							<!-- background-color:orange; -->
+			}
+			
+			div#box {
+									border-radius: 15px;
+									border-width: 2px;
+									border-style: solid;
+									vertical-align: middle;
+									background-color: white;
+									text-align: center;
+									float: center;
+									width: 75%;
+									margin: auto;
+									margin-top: 20%;
+									text-align: center;
+									height: 20% ;
+									background-color: rgb(255, 187, 0, 0.6);
+									font-size: 30px;
+									<!-- display: inline-block; -->
+									<!-- padding-top: 50px; -->
+									<!-- padding-bottom: 50px; -->
+									<!-- border-color: CornflowerBlue; -->
+			
+			}
+
+			div#verticalCenterText {
+													margin: 0;
+													position: relative;
+													top: 50%;
+													left: 50%;
+													transform: translate(-50%, -50%);
+													text-align: center;
+													vertical-align: middle;
+			}
+			
+			a.fill-div {
+							position: relative;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -30%);
+							display: inline-block;
+							height: 100%;
+							width: 100%;
+							text-decoration: none;
+			}
+			
+			.bg { 
+						/* The image used */
+						background-image: url("hex_dull.jpg");
+
+						/* Full height */
+						height: 60%;
+						width: 100%;
+						min-width:800px;
+
+						top:0; /* Add a top and bottom position so the element */  
+						bottombottom:0; /* stretches to the height of the parent */ 
+						left:0;
+						<!-- opacity: 0.3; -->
+
+						/* Center and scale the image nicely */
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: cover;
+			}
+			
+						div#textBox {
+												background-color: rgb(56, 49, 39,  0.9);
+												margin: 0;
+												position: relative;
+												top: 50%;
+												left: 50%;
+												transform: translate(-50%, -50%);
+												text-align: center;
+												vertical-align: bottom;
+			}
+			
 		</style>
 		
 	</head>
 	
 	<body>
+			<div id="top">
+			<div style="transform: translate(-0%, -50%);">About</div>
+			<div style="transform: translate(-0%, -50%);">JBrowse</div>
+			<!-- <div id="topLinks1" style="transform: translate(-0%, -50%);"></div> -->
+			<!-- <div id="topLinks1" style="transform: translate(00%, -50%);">JBrowse</div> -->
+		</div>
+		
 		<p>Genome Assembly</p>
+		
+		<form enctype="multipart/form-data" method="post" action="#">
+		   <input id="fileupload" name="myfile" type="file" />
+		   <input type="submit" value="submit" id="submit" />
+		</form>
+		
+		
 	</body>
 </html>
