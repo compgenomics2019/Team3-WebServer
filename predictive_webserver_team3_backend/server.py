@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, session, redirect, url_for, escape, request
 app = Flask(__name__)
 
 # Check Flask documentation
@@ -14,15 +14,19 @@ def run():
 def hello():
     return 'About'
 
-
+# Example
+# http://127.0.0.1:5000/projects
 @app.route('/projects/')
 def projects():
     return 'The project page'
 
+# http://127.0.0.1:5000/login
 # Just for sample - can be changed later
 @app.route('/login')
 def login():
-	if request.method == 'POST':
+    if request.method == 'GET':
+        return 'login'
+    elif request.method == 'POST':
         if valid_login(request.form['username'],
                        request.form['password']):
             return log_the_user_in(request.form['username'])
@@ -31,12 +35,12 @@ def login():
     return 'login'
 
     def valid_login(username, password):
-    	# Placeholder
-    	return True
+        # Placeholder
+        return True
 
     def log_the_user_in():
-    	# Placeholder
-    	return True
+        # Placeholder
+        return True
 
 # Example
 # http://127.0.0.1:5000/user/sreeni

@@ -1,0 +1,4 @@
+venv
+predictive_webserver_team3_backend/__pycache__/
+predictive_webserver_team3_backend/instance/
+predictive_webserver_team3_backend/.webassets-cache
