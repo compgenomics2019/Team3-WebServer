@@ -14,9 +14,29 @@ def run():
 def hello():
     return 'About'
 
+
+@app.route('/projects/')
+def projects():
+    return 'The project page'
+
+# Just for sample - can be changed later
 @app.route('/login')
 def login():
+	if request.method == 'POST':
+        if valid_login(request.form['username'],
+                       request.form['password']):
+            return log_the_user_in(request.form['username'])
+        else:
+            error = 'Invalid username/password'
     return 'login'
+
+    def valid_login(username, password):
+    	# Placeholder
+    	return True
+
+    def log_the_user_in():
+    	# Placeholder
+    	return True
 
 # Example
 # http://127.0.0.1:5000/user/sreeni
@@ -33,4 +53,13 @@ def show_user_profile(username):
 def show_post(post_id):
     # show the post with the given id, the id is an integer
     return 'Post %d' % post_id
+
+# For uploading a file
+# POST to this endpoint with
+# the file as POST parameter in the request
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('/var/www/uploads/uploaded_file.txt')
 
