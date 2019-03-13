@@ -1,5 +1,5 @@
 <?php
-$target_dir = "./";
+$target_dir = "/projects/VirtualHost/predictc/html/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
