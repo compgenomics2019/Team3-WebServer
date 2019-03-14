@@ -10,6 +10,8 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
     } else {
 		// echo $target_file
 		// echo basename( $_FILES["fileToUpload"]["name"])
+		// echo $_FILES["fileToUpload"]["name"];
+		echo $_FILES["fileToUpload"]["name"];
         echo "Sorry, there was an error uploading your file.";
     }
 ?>
