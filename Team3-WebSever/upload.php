@@ -1,6 +1,6 @@
 <?php
 $target_dir = "/projects/VirtualHost/predictc/html/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . $_FILES["fileToUpload"]["name"];
 $uploadOk = 1;
 $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -12,6 +12,8 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 		// echo basename( $_FILES["fileToUpload"]["name"])
 		// echo $_FILES["fileToUpload"]["name"];
 		echo $_FILES["fileToUpload"]["name"];
+		echo $target_file
+		echo $fileType
         echo "Sorry, there was an error uploading your file.";
     }
 ?>
