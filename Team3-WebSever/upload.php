@@ -5,7 +5,7 @@ $uploadOk = 1;
 $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Actually upload the file
-if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "sample")) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
 		// echo $target_file
