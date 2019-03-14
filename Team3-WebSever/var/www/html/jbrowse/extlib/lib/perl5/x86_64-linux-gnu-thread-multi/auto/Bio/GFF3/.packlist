@@ -1,0 +1,12 @@
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/bin/gff3_from_fasta
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/lib/perl5/Bio/GFF3/LowLevel.pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/lib/perl5/Bio/GFF3/LowLevel/Parser.pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/lib/perl5/Bio/GFF3/LowLevel/Parser/1_0_backcompat.pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/lib/perl5/Bio/GFF3/Transform/FromFasta.pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/lib/perl5/Bio/GFF3/Transform/SyncDirectives.pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/man/man1/gff3_from_fasta.1p
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/man/man3/Bio::GFF3::LowLevel.3pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/man/man3/Bio::GFF3::LowLevel::Parser.3pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/man/man3/Bio::GFF3::LowLevel::Parser::1_0_backcompat.3pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/man/man3/Bio::GFF3::Transform::FromFasta.3pm
+/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse/extlib/man/man3/Bio::GFF3::Transform::SyncDirectives.3pm

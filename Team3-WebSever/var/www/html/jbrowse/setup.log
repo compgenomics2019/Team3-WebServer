@@ -1,0 +1,999 @@
+
+Gathering system information ...
+============== System information ====
++ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.1 LTS
+Release:	18.04
+Codename:	bionic
++ uname -a
+Linux GeorgePC 4.4.0-17134-Microsoft #523-Microsoft Mon Dec 31 17:49:00 PST 2018 x86_64 x86_64 x86_64 GNU/Linux
++ sw_vers
+./setup.sh: line 75: sw_vers: command not found
++ grep MemTotal /proc/meminfo
+MemTotal:        6172316 kB
++ echo
+
++ echo
+
+
+done.
+
+
+NOTE: Legacy scripts wig-to-json.pl and bam-to-json.pl have been removed from setup. Their functionality has been superseded by add-bam-track.pl and add-bw-track.pl. If you require the old versions, please use JBrowse 1.12.3 or earlier.
+
+
+Minimal release, skipping node and Webpack build
+
+
+Installing Perl prerequisites ...
++ bin/cpanm -v --notest -l extlib/ --installdeps .
+cpanm (App::cpanminus) 1.7043 on perl 5.026001 built for x86_64-linux-gnu-thread-multi
+Work directory is /home/sub/.cpanm/work/1550282681.25607
+You have make /usr/bin/make
+You have LWP 6.31
+You have /bin/tar: tar (GNU tar) 1.29
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by John Gilmore and Jay Fenlason.
+You have /usr/bin/unzip
+Entering /mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse
+Running Makefile.PL
+--> Working on .
+Configuring /mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse ... Can't parse version 'dev'
+Can't parse version 'dev'
+Generating a Unix-style Makefile
+Writing Makefile for JBrowse
+Writing MYMETA.yml and MYMETA.json
+Checking dependencies from MYMETA.json ...
+Checking if you have Exporter 0 ... Yes (5.72)
+Checking if you have List::Util 0 ... Yes (1.46_02)
+Checking if you have IO::File 0 ... Yes (1.16)
+Checking if you have File::Copy::Recursive 0 ... Yes (0.44)
+Checking if you have URI::Escape 0 ... Yes (3.31)
+Checking if you have base 0 ... Yes (2.26)
+Checking if you have constant 0 ... Yes (1.33)
+Checking if you have Storable 0 ... Yes (2.62)
+Checking if you have File::Next 0 ... Yes (1.16)
+Checking if you have POSIX 0 ... Yes (1.76)
+Checking if you have Cwd 0 ... Yes (3.67)
+Checking if you have Bio::SeqFeature::Annotated 0 ... Yes (1.6.905)
+Checking if you have Bio::GFF3::LowLevel::Parser 1.8 ... Yes (2.0)
+Checking if you have Bio::SeqFeature::Lite 0 ... Yes (undef)
+Checking if you have Pod::Usage 0 ... Yes (1.69)
+Checking if you have vars 0 ... Yes (1.03)
+Checking if you have JSON 2 ... Yes (4.01)
+Checking if you have FindBin 0 ... Yes (1.51)
+Checking if you have Scalar::Util 0 ... Yes (1.46_02)
+Checking if you have DBD::SQLite 0 ... Yes (1.62)
+Checking if you have Getopt::Long 0 ... Yes (2.49)
+Checking if you have Bio::Annotation::SimpleValue 0 ... Yes (undef)
+Checking if you have Bio::GFF3::LowLevel 1.8 ... Yes (2.0)
+Checking if you have Test::More 0 ... Yes (1.302162)
+Checking if you have Bio::FeatureIO 0 ... Yes (1.6.905)
+Checking if you have Heap::Simple 0 ... Yes (0.13)
+Checking if you have DB_File 0 ... Yes (1.840)
+Checking if you have File::Path 2 ... Yes (2.12_01)
+Checking if you have local::lib 0 ... Yes (2.000024)
+Checking if you have Parse::RecDescent 0 ... Yes (1.967015)
+Checking if you have warnings 0 ... Yes (1.37)
+Checking if you have File::Basename 0 ... Yes (2.85)
+Checking if you have File::Spec 0 ... Yes (3.67)
+Checking if you have File::Temp 0 ... Yes (0.2304)
+Checking if you have Bio::Root::Version 1.006000 ... Yes (1.007002)
+Checking if you have DBI 0 ... Yes (1.642)
+Checking if you have JSON::XS 0 ... Yes (4.0)
+Checking if you have List::MoreUtils 0.28 ... Yes (0.428)
+Checking if you have Data::Dumper 0 ... Yes (2.167)
+Checking if you have Hash::Merge 0 ... Yes (0.300)
+Checking if you have Fcntl 0 ... Yes (1.13)
+Checking if you have Bio::OntologyIO 0 ... Yes (undef)
+Checking if you have IO::Uncompress::Gunzip 0 ... Yes (2.074)
+Checking if you have PerlIO::gzip 0 ... Yes (0.20)
+Checking if you have Capture::Tiny 0 ... Yes (0.48)
+Checking if you have Carp 0 ... Yes (1.42)
+Checking if you have Test::Warn 0 ... Yes (0.36)
+Checking if you have File::Spec::Functions 0 ... Yes (3.67)
+Checking if you have Digest::Crc32 0 ... Yes (0.01)
+Checking if you have Bio::Index::Fasta 0 ... Yes (undef)
+Checking if you have Devel::Size 0 ... Yes (0.82)
+Checking if you have Heap::Simple::XS 0 ... Yes (0.10)
+Checking if you have strict 0 ... Yes (1.11)
+OK
+<== Installed dependencies for .. Finishing.
++ bin/cpanm -v --notest -l extlib/ --installdeps .
+cpanm (App::cpanminus) 1.7043 on perl 5.026001 built for x86_64-linux-gnu-thread-multi
+Work directory is /home/sub/.cpanm/work/1550282684.25617
+You have make /usr/bin/make
+You have LWP 6.31
+You have /bin/tar: tar (GNU tar) 1.29
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by John Gilmore and Jay Fenlason.
+You have /usr/bin/unzip
+Entering /mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse
+Running Makefile.PL
+--> Working on .
+Configuring /mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse ... Can't parse version 'dev'
+Can't parse version 'dev'
+Generating a Unix-style Makefile
+Writing Makefile for JBrowse
+Writing MYMETA.yml and MYMETA.json
+Checking dependencies from MYMETA.json ...
+Checking if you have Capture::Tiny 0 ... Yes (0.48)
+Checking if you have Test::Warn 0 ... Yes (0.36)
+Checking if you have DB_File 0 ... Yes (1.840)
+Checking if you have Cwd 0 ... Yes (3.67)
+Checking if you have Bio::Root::Version 1.006000 ... Yes (1.007002)
+Checking if you have Data::Dumper 0 ... Yes (2.167)
+Checking if you have Bio::SeqFeature::Lite 0 ... Yes (undef)
+Checking if you have File::Next 0 ... Yes (1.16)
+Checking if you have File::Basename 0 ... Yes (2.85)
+Checking if you have Carp 0 ... Yes (1.42)
+Checking if you have Bio::Annotation::SimpleValue 0 ... Yes (undef)
+Checking if you have Bio::FeatureIO 0 ... Yes (1.6.905)
+Checking if you have IO::File 0 ... Yes (1.16)
+Checking if you have Getopt::Long 0 ... Yes (2.49)
+Checking if you have File::Spec::Functions 0 ... Yes (3.67)
+Checking if you have FindBin 0 ... Yes (1.51)
+Checking if you have constant 0 ... Yes (1.33)
+Checking if you have Hash::Merge 0 ... Yes (0.300)
+Checking if you have URI::Escape 0 ... Yes (3.31)
+Checking if you have Fcntl 0 ... Yes (1.13)
+Checking if you have JSON 2 ... Yes (4.01)
+Checking if you have Test::More 0 ... Yes (1.302162)
+Checking if you have vars 0 ... Yes (1.03)
+Checking if you have Heap::Simple::XS 0 ... Yes (0.10)
+Checking if you have Bio::Index::Fasta 0 ... Yes (undef)
+Checking if you have warnings 0 ... Yes (1.37)
+Checking if you have Bio::OntologyIO 0 ... Yes (undef)
+Checking if you have PerlIO::gzip 0 ... Yes (0.20)
+Checking if you have Pod::Usage 0 ... Yes (1.69)
+Checking if you have Bio::GFF3::LowLevel 1.8 ... Yes (2.0)
+Checking if you have Bio::SeqFeature::Annotated 0 ... Yes (1.6.905)
+Checking if you have JSON::XS 0 ... Yes (4.0)
+Checking if you have Bio::GFF3::LowLevel::Parser 1.8 ... Yes (2.0)
+Checking if you have List::MoreUtils 0.28 ... Yes (0.428)
+Checking if you have DBD::SQLite 0 ... Yes (1.62)
+Checking if you have local::lib 0 ... Yes (2.000024)
+Checking if you have Scalar::Util 0 ... Yes (1.46_02)
+Checking if you have File::Temp 0 ... Yes (0.2304)
+Checking if you have List::Util 0 ... Yes (1.46_02)
+Checking if you have Heap::Simple 0 ... Yes (0.13)
+Checking if you have Parse::RecDescent 0 ... Yes (1.967015)
+Checking if you have File::Copy::Recursive 0 ... Yes (0.44)
+Checking if you have Storable 0 ... Yes (2.62)
+Checking if you have File::Path 2 ... Yes (2.12_01)
+Checking if you have Digest::Crc32 0 ... Yes (0.01)
+Checking if you have Devel::Size 0 ... Yes (0.82)
+Checking if you have Exporter 0 ... Yes (5.72)
+Checking if you have POSIX 0 ... Yes (1.76)
+Checking if you have base 0 ... Yes (2.26)
+Checking if you have IO::Uncompress::Gunzip 0 ... Yes (2.074)
+Checking if you have DBI 0 ... Yes (1.642)
+Checking if you have File::Spec 0 ... Yes (3.67)
+Checking if you have strict 0 ... Yes (1.11)
+OK
+<== Installed dependencies for .. Finishing.
++ set -e
++ bin/cpanm -v --notest -l extlib/ --installdeps .
+cpanm (App::cpanminus) 1.7043 on perl 5.026001 built for x86_64-linux-gnu-thread-multi
+Work directory is /home/sub/.cpanm/work/1550282686.25627
+You have make /usr/bin/make
+You have LWP 6.31
+You have /bin/tar: tar (GNU tar) 1.29
+Copyright (C) 2015 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by John Gilmore and Jay Fenlason.
+You have /usr/bin/unzip
+Entering /mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse
+Running Makefile.PL
+--> Working on .
+Configuring /mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebSever/var/www/html/jbrowse ... Can't parse version 'dev'
+Can't parse version 'dev'
+Generating a Unix-style Makefile
+Writing Makefile for JBrowse
+Writing MYMETA.yml and MYMETA.json
+Checking dependencies from MYMETA.json ...
+Checking if you have File::Copy::Recursive 0 ... Yes (0.44)
+Checking if you have List::Util 0 ... Yes (1.46_02)
+Checking if you have Test::Warn 0 ... Yes (0.36)
+Checking if you have Bio::GFF3::LowLevel 1.8 ... Yes (2.0)
+Checking if you have Carp 0 ... Yes (1.42)
+Checking if you have local::lib 0 ... Yes (2.000024)
+Checking if you have vars 0 ... Yes (1.03)
+Checking if you have DBD::SQLite 0 ... Yes (1.62)
+Checking if you have Capture::Tiny 0 ... Yes (0.48)
+Checking if you have Bio::Index::Fasta 0 ... Yes (undef)
+Checking if you have Scalar::Util 0 ... Yes (1.46_02)
+Checking if you have JSON 2 ... Yes (4.01)
+Checking if you have Bio::FeatureIO 0 ... Yes (1.6.905)
+Checking if you have Test::More 0 ... Yes (1.302162)
+Checking if you have IO::Uncompress::Gunzip 0 ... Yes (2.074)
+Checking if you have Digest::Crc32 0 ... Yes (0.01)
+Checking if you have PerlIO::gzip 0 ... Yes (0.20)
+Checking if you have Data::Dumper 0 ... Yes (2.167)
+Checking if you have Devel::Size 0 ... Yes (0.82)
+Checking if you have File::Next 0 ... Yes (1.16)
+Checking if you have File::Spec::Functions 0 ... Yes (3.67)
+Checking if you have Bio::OntologyIO 0 ... Yes (undef)
+Checking if you have Exporter 0 ... Yes (5.72)
+Checking if you have Bio::GFF3::LowLevel::Parser 1.8 ... Yes (2.0)
+Checking if you have base 0 ... Yes (2.26)
+Checking if you have DB_File 0 ... Yes (1.840)
+Checking if you have Bio::Annotation::SimpleValue 0 ... Yes (undef)
+Checking if you have Heap::Simple::XS 0 ... Yes (0.10)
+Checking if you have Bio::SeqFeature::Lite 0 ... Yes (undef)
+Checking if you have strict 0 ... Yes (1.11)
+Checking if you have Cwd 0 ... Yes (3.67)
+Checking if you have File::Path 2 ... Yes (2.12_01)
+Checking if you have Bio::SeqFeature::Annotated 0 ... Yes (1.6.905)
+Checking if you have Hash::Merge 0 ... Yes (0.300)
+Checking if you have constant 0 ... Yes (1.33)
+Checking if you have Parse::RecDescent 0 ... Yes (1.967015)
+Checking if you have warnings 0 ... Yes (1.37)
+Checking if you have File::Temp 0 ... Yes (0.2304)
+Checking if you have List::MoreUtils 0.28 ... Yes (0.428)
+Checking if you have Heap::Simple 0 ... Yes (0.13)
+Checking if you have Pod::Usage 0 ... Yes (1.69)
+Checking if you have Fcntl 0 ... Yes (1.13)
+Checking if you have DBI 0 ... Yes (1.642)
+Checking if you have URI::Escape 0 ... Yes (3.31)
+Checking if you have Getopt::Long 0 ... Yes (2.49)
+Checking if you have FindBin 0 ... Yes (1.51)
+Checking if you have File::Basename 0 ... Yes (2.85)
+Checking if you have Bio::Root::Version 1.006000 ... Yes (1.007002)
+Checking if you have JSON::XS 0 ... Yes (4.0)
+Checking if you have POSIX 0 ... Yes (1.76)
+Checking if you have Storable 0 ... Yes (2.62)
+Checking if you have IO::File 0 ... Yes (1.16)
+Checking if you have File::Spec 0 ... Yes (3.67)
+OK
+<== Installed dependencies for .. Finishing.
+
+done.
+
+
+
+
+
+Formatting Volvox example data ...
++ rm -rf sample_data/json/volvox
++ bin/prepare-refseqs.pl --fasta docs/tutorial/data_files/volvox.fa --out sample_data/json/volvox
++ '[' 0 -eq 1 ']'
++ bin/biodb-to-json.pl -v --conf docs/tutorial/conf_files/volvox.json --out sample_data/json/volvox
+Possible precedence issue with control flow operator at /usr/local/share/perl/5.26.1/Bio/DB/IndexedBase.pm line 845.
+
+working on refseq ctgA
+working on track ExampleFeatures
+mergedTrackCfg: $VAR1 = {
+          'track' => 'ExampleFeatures',
+          'feature' => [
+                         'remark'
+                       ],
+          'autocomplete' => 'all',
+          'category' => 'Miscellaneous',
+          'style' => {
+                       'className' => 'feature2'
+                     },
+          'compress' => 0,
+          'key' => 'HTMLFeatures - Example Features'
+        };
+searching for features of type: remark
+working on track NameTest
+mergedTrackCfg: $VAR1 = {
+          'style' => {
+                       'className' => 'feature2'
+                     },
+          'compress' => 0,
+          'key' => 'HTMLFeatures - Name test track has a really long track label',
+          'category' => 'Miscellaneous',
+          'track' => 'NameTest',
+          'feature' => [
+                         'protein_coding_primary_transcript',
+                         'polypeptide'
+                       ],
+          'autocomplete' => 'all'
+        };
+searching for features of type: protein_coding_primary_transcript, polypeptide
+working on track snps
+mergedTrackCfg: $VAR1 = {
+          'style' => {
+                       'className' => 'triangle hgred'
+                     },
+          'key' => 'HTMLFeatures - SNPs',
+          'compress' => 0,
+          'category' => 'Miscellaneous',
+          'track' => 'snps',
+          'autocomplete' => 'all',
+          'feature' => [
+                         'SNP'
+                       ]
+        };
+searching for features of type: SNP
+working on track Motifs
+mergedTrackCfg: $VAR1 = {
+          'key' => 'HTMLFeatures - Example motifs',
+          'compress' => 0,
+          'track' => 'Motifs',
+          'style' => {
+                       'label' => 'function(feature) { return feature.get(\'Name\')+\' (via JS callback)\' }',
+                       'className' => 'feature3',
+                       'description' => 'function(feature) { return feature.get(\'Name\')+\': \'+feature.get(\'Note\'); }'
+                     },
+          'category' => 'Miscellaneous',
+          'feature' => [
+                         'polypeptide_domain'
+                       ],
+          'autocomplete' => 'all',
+          'description' => 1
+        };
+searching for features of type: polypeptide_domain
+working on track malformed_alignments
+mergedTrackCfg: $VAR1 = {
+          'autocomplete' => 'all',
+          'feature' => [
+                         'match'
+                       ],
+          'metadata' => {
+                          'category' => 'Miscellaneous',
+                          'Description' => 'Features with extensively customized right-click menus, and with their colors set at random by a JavaScript callback.'
+                        },
+          'menuTemplate' => [
+                              {
+                                'children' => [
+                                                {
+                                                  'label' => 'Check gene on databases',
+                                                  'children' => [
+                                                                  {
+                                                                    'label' => 'Query trin for {name}',
+                                                                    'iconClass' => 'dijitIconBookmark',
+                                                                    'url' => 'http://wiki.trin.org.au/{name}-{start}-{end}',
+                                                                    'action' => 'newWindow'
+                                                                  },
+                                                                  {
+                                                                    'label' => 'Query example.com for {name}',
+                                                                    'url' => 'http://example.com/{name}-{start}-{end}',
+                                                                    'iconClass' => 'dijitIconSearch'
+                                                                  }
+                                                                ]
+                                                },
+                                                {
+                                                  'label' => '2nd child of demo'
+                                                },
+                                                {
+                                                  'label' => '3rd child: this is a track'
+                                                }
+                                              ],
+                                'label' => 'Item with submenu'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'url' => 'http://www.example.com?featurename={name}',
+                                'action' => 'iframeDialog',
+                                'title' => 'The magnificent example.com (feature {name})',
+                                'label' => 'Open example.com in an iframe popup'
+                              },
+                              {
+                                'title' => 'function(track,feature,div) { return \'Random XHR HTML \'+Math.random()+\' title!\'; }',
+                                'label' => 'Open popup with XHR HTML snippet (btw this is feature {name})',
+                                'url' => 'sample_data/test_snippet.html?featurename={name}:{start}-{end}',
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => 'xhrDialog'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => 'contentDialog',
+                                'title' => 'function(track,feature,div) { return \'Random content snippet \'+Math.random()+\' title!\'; }',
+                                'content' => 'function(track,feature,div) { return \'<h2>\'+feature.get(\'name\')+\'</h2><p>This is some test content!</p><p>This message brought to you by the number <span style="font-size: 300%">\'+Math.round(Math.random()*100)+\'</span>.</p>\';} ',
+                                'label' => 'Popup with content snippet from a function (feature {name})'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => 'contentDialog',
+                                'content' => '<h2>{name}</h2><p>This is some test content about {name}, which goes from {start} to {end} on the {strand} strand.</p>',
+                                'title' => '{randomNumberTitle}',
+                                'label' => 'Popup with content snippet from string (feature {name})'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => '{exampleFeatureClick}',
+                                'label' => '{randomNumberLabel}'
+                              }
+                            ],
+          'hooks' => {
+                       'modify' => 'function( track, feature, div ) { div.style.backgroundColor = [\'green\',\'blue\',\'red\',\'orange\',\'purple\'][Math.round(Math.random()*5)];}'
+                     },
+          'style' => {
+                       'className' => 'feature4'
+                     },
+          'track' => 'malformed_alignments',
+          'shortDescription' => 'Features with customized right-click menus',
+          'key' => 'HTMLFeatures - Features with right-click menus',
+          'compress' => 0
+        };
+searching for features of type: match
+working on track Genes
+mergedTrackCfg: $VAR1 = {
+          'feature' => [
+                         'gene'
+                       ],
+          'fmtDetailField_Name' => 'function(name,feature) { if(feature.get(\'type\')==\'gene\') { return \'Gene Name\'; } else { return name; } }',
+          'autocomplete' => 'all',
+          'metadata' => {
+                          'ncbi_submission_package' => 'Generic.1.0',
+                          'description_title' => 'Volvox_mRNA_rep_2_6',
+                          'insdc_first_public' => '2018-05-15T00:00:00Z',
+                          'insdc_secondary_accession' => 'SRS12345678',
+                          'ENA last update' => '2018-05-16',
+                          'library_total_amount_of_reads' => '3349981',
+                          'source_name' => 'Volvox 6- 330 min',
+                          'Link: ENA study page' => 'http://www.ebi.ac.uk/ena/',
+                          'tissue' => 'embryo',
+                          'sample_name' => 'GSM12345678',
+                          'study' => 'SRP12345678 a study of volvox',
+                          'developmental_stage' => 'stage 6- 330 min',
+                          'mapping_fraction_of_uniquely_mapped_reads' => '0.429',
+                          'organism' => 'Volvox',
+                          'ENA first public' => '2018-05-16',
+                          'insdc_status' => 'live',
+                          'insdc_center_name' => 'INSDC Sample',
+                          'mapping_quality_approx' => 'under 50%',
+                          'library_size_approx' => '1-5mln',
+                          'insdc_last_update' => '2018-05-15T01:18:23.110Z',
+                          'ncbi_submission_model' => 'Generic',
+                          'Link: RNASeq-er analysis results' => 'ftp://ftp.ebi.ac.uk/pub/databases/arrayexpress/'
+                        },
+          'style' => {
+                       'className' => 'feature5'
+                     },
+          'track' => 'Genes',
+          'fmtMetaField_Name' => 'function(name) { return \'Track Name\'; }',
+          'fmtMetaValue_Name' => 'function(name) { return name+\' [Track with custom callbacks for About track popup]\'; }',
+          'fmtDetailField_Load_id' => 'function(name,feature) { /* remove field from dialog box */ return null; }',
+          'menuTemplate' => [
+                              {
+                                'label' => 'View details'
+                              },
+                              {
+                                'label' => 'Zoom this gene'
+                              },
+                              {
+                                'label' => 'Highlight this gene'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => 'contentDialog',
+                                'content' => '<h2>{name}</h2>This is some test content about {type} {name}, which goes from {start} to {end} on the {strand} strand.',
+                                'title' => '{randomNumberTitle}',
+                                'label' => 'Popup with content snippet from string (feature {name})'
+                              }
+                            ],
+          'fmtDetailValue_Name' => 'function(name,feature) { if(feature.get(\'type\')==\'gene\') { return name + \' <a href=http://www.ncbi.nlm.nih.gov/gquery/?term=\'+name+\'>[NCBI custom link]</a>\'; } else { return name; } }',
+          'category' => 'Transcripts',
+          'trackType' => 'NeatCanvasFeatures/View/Track/NeatFeatures',
+          'unsafeMouseover' => bless( do{\(my $o = 1)}, 'JSON::PP::Boolean' ),
+          'compress' => 0,
+          'key' => 'CanvasFeatures - Protein-coding genes',
+          'fmtMetaDescription_Name' => 'function(name) { return \'[Custom description]\'; }',
+          'onClick' => {
+                         'title' => '{type} {name}',
+                         'label' => '<div style=\'font:normal 12px Univers,Helvetica,Arial,sans-serif\'><div style=\'font-weight:bold\'>Custom tooltip</div><div style=\'color:blue;\'>Feature name: {name}<br />Feature start: {start}<br />Feature end: {end}</div></div>',
+                         'action' => 'defaultDialog'
+                       }
+        };
+searching for features of type: gene
+working on track ReadingFrame
+mergedTrackCfg: $VAR1 = {
+          'key' => 'HTMLFeatures - mRNAs',
+          'compress' => 0,
+          'onClick' => {
+                         'title' => 'NCBI search box',
+                         'label' => 'Search for {name} at NCBI
+Feature start {start}
+Feature end {end}',
+                         'url' => 'http://www.ncbi.nlm.nih.gov/gquery/?term={name}'
+                       },
+          'phase' => 1,
+          'track' => 'ReadingFrame',
+          'trackType' => 'NeatHTMLFeatures/View/Track/NeatFeatures',
+          'style' => {
+                       'className' => 'cds'
+                     },
+          'category' => 'Transcripts',
+          'autocomplete' => 'all',
+          'feature' => [
+                         'mRNA'
+                       ]
+        };
+searching for features of type: mRNA
+working on track CDS
+mergedTrackCfg: $VAR1 = {
+          'feature' => [
+                         'CDS:bare_predicted',
+                         'mRNA:exonerate',
+                         'mRNA:predicted'
+                       ],
+          'autocomplete' => 'all',
+          'category' => 'Transcripts',
+          'style' => {
+                       'linkTemplate' => 'http://www.ncbi.nlm.nih.gov/gquery/?term={name}-{start}-{end}',
+                       'className' => 'cds'
+                     },
+          'trackType' => 'CanvasFeatures',
+          'track' => 'CDS',
+          'compress' => 0,
+          'key' => 'CanvasFeatures - mixed mRNAs and CDSs'
+        };
+searching for features of type: CDS:bare_predicted, mRNA:exonerate, mRNA:predicted
+working on track Transcript
+mergedTrackCfg: $VAR1 = {
+          'feature' => [
+                         'mRNA:exonerate'
+                       ],
+          'autocomplete' => 'all',
+          'subfeatures' => bless( do{\(my $o = 1)}, 'JSON::PP::Boolean' ),
+          'description' => 1,
+          'style' => {
+                       'color' => '#E32A3A',
+                       'description' => 'customdescription',
+                       'className' => 'feature'
+                     },
+          'category' => 'Transcripts',
+          'showNoteInAttributes' => $VAR1->{'subfeatures'},
+          'trackType' => 'JBrowse/View/Track/CanvasFeatures',
+          'track' => 'Transcript',
+          'compress' => 0,
+          'key' => 'CanvasFeatures - transcripts',
+          'onClick' => '{exampleFeatureClick}'
+        };
+searching for features of type: mRNA:exonerate
+working on track Clones
+mergedTrackCfg: $VAR1 = {
+          'autocomplete' => 'all',
+          'feature' => [
+                         'BAC'
+                       ],
+          'description' => 1,
+          'category' => 'Miscellaneous',
+          'style' => {
+                       'className' => 'exon'
+                     },
+          'track' => 'Clones',
+          'compress' => 0,
+          'key' => 'HTMLFeatures - Fingerprinted BACs'
+        };
+searching for features of type: BAC
+working on track EST
+mergedTrackCfg: $VAR1 = {
+          'track' => 'EST',
+          'autocomplete' => 'all',
+          'feature' => [
+                         'EST_match:est'
+                       ],
+          'style' => {
+                       'className' => 'est'
+                     },
+          'compress' => 0,
+          'key' => 'HTMLFeatures - ESTs',
+          'category' => 'Miscellaneous'
+        };
+searching for features of type: EST_match:est
+
+working on refseq ctgB
+working on track ExampleFeatures
+mergedTrackCfg: $VAR1 = {
+          'feature' => [
+                         'remark'
+                       ],
+          'autocomplete' => 'all',
+          'track' => 'ExampleFeatures',
+          'key' => 'HTMLFeatures - Example Features',
+          'style' => {
+                       'className' => 'feature2'
+                     },
+          'compress' => 0,
+          'category' => 'Miscellaneous'
+        };
+searching for features of type: remark
+working on track NameTest
+mergedTrackCfg: $VAR1 = {
+          'track' => 'NameTest',
+          'feature' => [
+                         'protein_coding_primary_transcript',
+                         'polypeptide'
+                       ],
+          'autocomplete' => 'all',
+          'style' => {
+                       'className' => 'feature2'
+                     },
+          'key' => 'HTMLFeatures - Name test track has a really long track label',
+          'compress' => 0,
+          'category' => 'Miscellaneous'
+        };
+searching for features of type: protein_coding_primary_transcript, polypeptide
+working on track snps
+mergedTrackCfg: $VAR1 = {
+          'category' => 'Miscellaneous',
+          'key' => 'HTMLFeatures - SNPs',
+          'style' => {
+                       'className' => 'triangle hgred'
+                     },
+          'compress' => 0,
+          'autocomplete' => 'all',
+          'feature' => [
+                         'SNP'
+                       ],
+          'track' => 'snps'
+        };
+searching for features of type: SNP
+working on track Motifs
+mergedTrackCfg: $VAR1 = {
+          'track' => 'Motifs',
+          'key' => 'HTMLFeatures - Example motifs',
+          'compress' => 0,
+          'autocomplete' => 'all',
+          'feature' => [
+                         'polypeptide_domain'
+                       ],
+          'description' => 1,
+          'style' => {
+                       'label' => 'function(feature) { return feature.get(\'Name\')+\' (via JS callback)\' }',
+                       'className' => 'feature3',
+                       'description' => 'function(feature) { return feature.get(\'Name\')+\': \'+feature.get(\'Note\'); }'
+                     },
+          'category' => 'Miscellaneous'
+        };
+searching for features of type: polypeptide_domain
+working on track malformed_alignments
+mergedTrackCfg: $VAR1 = {
+          'style' => {
+                       'className' => 'feature4'
+                     },
+          'feature' => [
+                         'match'
+                       ],
+          'metadata' => {
+                          'category' => 'Miscellaneous',
+                          'Description' => 'Features with extensively customized right-click menus, and with their colors set at random by a JavaScript callback.'
+                        },
+          'autocomplete' => 'all',
+          'hooks' => {
+                       'modify' => 'function( track, feature, div ) { div.style.backgroundColor = [\'green\',\'blue\',\'red\',\'orange\',\'purple\'][Math.round(Math.random()*5)];}'
+                     },
+          'menuTemplate' => [
+                              {
+                                'children' => [
+                                                {
+                                                  'label' => 'Check gene on databases',
+                                                  'children' => [
+                                                                  {
+                                                                    'label' => 'Query trin for {name}',
+                                                                    'iconClass' => 'dijitIconBookmark',
+                                                                    'url' => 'http://wiki.trin.org.au/{name}-{start}-{end}',
+                                                                    'action' => 'newWindow'
+                                                                  },
+                                                                  {
+                                                                    'label' => 'Query example.com for {name}',
+                                                                    'url' => 'http://example.com/{name}-{start}-{end}',
+                                                                    'iconClass' => 'dijitIconSearch'
+                                                                  }
+                                                                ]
+                                                },
+                                                {
+                                                  'label' => '2nd child of demo'
+                                                },
+                                                {
+                                                  'label' => '3rd child: this is a track'
+                                                }
+                                              ],
+                                'label' => 'Item with submenu'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'url' => 'http://www.example.com?featurename={name}',
+                                'action' => 'iframeDialog',
+                                'title' => 'The magnificent example.com (feature {name})',
+                                'label' => 'Open example.com in an iframe popup'
+                              },
+                              {
+                                'title' => 'function(track,feature,div) { return \'Random XHR HTML \'+Math.random()+\' title!\'; }',
+                                'label' => 'Open popup with XHR HTML snippet (btw this is feature {name})',
+                                'url' => 'sample_data/test_snippet.html?featurename={name}:{start}-{end}',
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => 'xhrDialog'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => 'contentDialog',
+                                'title' => 'function(track,feature,div) { return \'Random content snippet \'+Math.random()+\' title!\'; }',
+                                'content' => 'function(track,feature,div) { return \'<h2>\'+feature.get(\'name\')+\'</h2><p>This is some test content!</p><p>This message brought to you by the number <span style="font-size: 300%">\'+Math.round(Math.random()*100)+\'</span>.</p>\';} ',
+                                'label' => 'Popup with content snippet from a function (feature {name})'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => 'contentDialog',
+                                'content' => '<h2>{name}</h2><p>This is some test content about {name}, which goes from {start} to {end} on the {strand} strand.</p>',
+                                'title' => '{randomNumberTitle}',
+                                'label' => 'Popup with content snippet from string (feature {name})'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => '{exampleFeatureClick}',
+                                'label' => '{randomNumberLabel}'
+                              }
+                            ],
+          'compress' => 0,
+          'key' => 'HTMLFeatures - Features with right-click menus',
+          'shortDescription' => 'Features with customized right-click menus',
+          'track' => 'malformed_alignments'
+        };
+searching for features of type: match
+working on track Genes
+mergedTrackCfg: $VAR1 = {
+          'fmtMetaValue_Name' => 'function(name) { return name+\' [Track with custom callbacks for About track popup]\'; }',
+          'track' => 'Genes',
+          'fmtMetaField_Name' => 'function(name) { return \'Track Name\'; }',
+          'style' => {
+                       'className' => 'feature5'
+                     },
+          'metadata' => {
+                          'ncbi_submission_package' => 'Generic.1.0',
+                          'description_title' => 'Volvox_mRNA_rep_2_6',
+                          'insdc_first_public' => '2018-05-15T00:00:00Z',
+                          'insdc_secondary_accession' => 'SRS12345678',
+                          'ENA last update' => '2018-05-16',
+                          'library_total_amount_of_reads' => '3349981',
+                          'source_name' => 'Volvox 6- 330 min',
+                          'Link: ENA study page' => 'http://www.ebi.ac.uk/ena/',
+                          'tissue' => 'embryo',
+                          'sample_name' => 'GSM12345678',
+                          'study' => 'SRP12345678 a study of volvox',
+                          'developmental_stage' => 'stage 6- 330 min',
+                          'mapping_fraction_of_uniquely_mapped_reads' => '0.429',
+                          'organism' => 'Volvox',
+                          'ENA first public' => '2018-05-16',
+                          'insdc_status' => 'live',
+                          'insdc_center_name' => 'INSDC Sample',
+                          'mapping_quality_approx' => 'under 50%',
+                          'library_size_approx' => '1-5mln',
+                          'insdc_last_update' => '2018-05-15T01:18:23.110Z',
+                          'ncbi_submission_model' => 'Generic',
+                          'Link: RNASeq-er analysis results' => 'ftp://ftp.ebi.ac.uk/pub/databases/arrayexpress/'
+                        },
+          'autocomplete' => 'all',
+          'feature' => [
+                         'gene'
+                       ],
+          'fmtDetailField_Name' => 'function(name,feature) { if(feature.get(\'type\')==\'gene\') { return \'Gene Name\'; } else { return name; } }',
+          'fmtMetaDescription_Name' => 'function(name) { return \'[Custom description]\'; }',
+          'compress' => 0,
+          'key' => 'CanvasFeatures - Protein-coding genes',
+          'unsafeMouseover' => bless( do{\(my $o = 1)}, 'JSON::PP::Boolean' ),
+          'onClick' => {
+                         'title' => '{type} {name}',
+                         'label' => '<div style=\'font:normal 12px Univers,Helvetica,Arial,sans-serif\'><div style=\'font-weight:bold\'>Custom tooltip</div><div style=\'color:blue;\'>Feature name: {name}<br />Feature start: {start}<br />Feature end: {end}</div></div>',
+                         'action' => 'defaultDialog'
+                       },
+          'trackType' => 'NeatCanvasFeatures/View/Track/NeatFeatures',
+          'category' => 'Transcripts',
+          'fmtDetailField_Load_id' => 'function(name,feature) { /* remove field from dialog box */ return null; }',
+          'fmtDetailValue_Name' => 'function(name,feature) { if(feature.get(\'type\')==\'gene\') { return name + \' <a href=http://www.ncbi.nlm.nih.gov/gquery/?term=\'+name+\'>[NCBI custom link]</a>\'; } else { return name; } }',
+          'menuTemplate' => [
+                              {
+                                'label' => 'View details'
+                              },
+                              {
+                                'label' => 'Zoom this gene'
+                              },
+                              {
+                                'label' => 'Highlight this gene'
+                              },
+                              {
+                                'iconClass' => 'dijitIconDatabase',
+                                'action' => 'contentDialog',
+                                'content' => '<h2>{name}</h2>This is some test content about {type} {name}, which goes from {start} to {end} on the {strand} strand.',
+                                'title' => '{randomNumberTitle}',
+                                'label' => 'Popup with content snippet from string (feature {name})'
+                              }
+                            ]
+        };
+searching for features of type: gene
+working on track ReadingFrame
+mergedTrackCfg: $VAR1 = {
+          'autocomplete' => 'all',
+          'feature' => [
+                         'mRNA'
+                       ],
+          'style' => {
+                       'className' => 'cds'
+                     },
+          'category' => 'Transcripts',
+          'phase' => 1,
+          'trackType' => 'NeatHTMLFeatures/View/Track/NeatFeatures',
+          'track' => 'ReadingFrame',
+          'onClick' => {
+                         'title' => 'NCBI search box',
+                         'label' => 'Search for {name} at NCBI
+Feature start {start}
+Feature end {end}',
+                         'url' => 'http://www.ncbi.nlm.nih.gov/gquery/?term={name}'
+                       },
+          'compress' => 0,
+          'key' => 'HTMLFeatures - mRNAs'
+        };
+searching for features of type: mRNA
+working on track CDS
+mergedTrackCfg: $VAR1 = {
+          'category' => 'Transcripts',
+          'style' => {
+                       'linkTemplate' => 'http://www.ncbi.nlm.nih.gov/gquery/?term={name}-{start}-{end}',
+                       'className' => 'cds'
+                     },
+          'autocomplete' => 'all',
+          'feature' => [
+                         'CDS:bare_predicted',
+                         'mRNA:exonerate',
+                         'mRNA:predicted'
+                       ],
+          'key' => 'CanvasFeatures - mixed mRNAs and CDSs',
+          'compress' => 0,
+          'trackType' => 'CanvasFeatures',
+          'track' => 'CDS'
+        };
+searching for features of type: CDS:bare_predicted, mRNA:exonerate, mRNA:predicted
+working on track Transcript
+mergedTrackCfg: $VAR1 = {
+          'autocomplete' => 'all',
+          'feature' => [
+                         'mRNA:exonerate'
+                       ],
+          'subfeatures' => bless( do{\(my $o = 1)}, 'JSON::PP::Boolean' ),
+          'description' => 1,
+          'style' => {
+                       'color' => '#E32A3A',
+                       'description' => 'customdescription',
+                       'className' => 'feature'
+                     },
+          'category' => 'Transcripts',
+          'showNoteInAttributes' => $VAR1->{'subfeatures'},
+          'track' => 'Transcript',
+          'trackType' => 'JBrowse/View/Track/CanvasFeatures',
+          'compress' => 0,
+          'key' => 'CanvasFeatures - transcripts',
+          'onClick' => '{exampleFeatureClick}'
+        };
+searching for features of type: mRNA:exonerate
+working on track Clones
+mergedTrackCfg: $VAR1 = {
+          'track' => 'Clones',
+          'compress' => 0,
+          'key' => 'HTMLFeatures - Fingerprinted BACs',
+          'description' => 1,
+          'autocomplete' => 'all',
+          'feature' => [
+                         'BAC'
+                       ],
+          'category' => 'Miscellaneous',
+          'style' => {
+                       'className' => 'exon'
+                     }
+        };
+searching for features of type: BAC
+working on track EST
+mergedTrackCfg: $VAR1 = {
+          'track' => 'EST',
+          'autocomplete' => 'all',
+          'feature' => [
+                         'EST_match:est'
+                       ],
+          'category' => 'Miscellaneous',
+          'style' => {
+                       'className' => 'est'
+                     },
+          'compress' => 0,
+          'key' => 'HTMLFeatures - ESTs'
+        };
+searching for features of type: EST_match:est
++ cat docs/tutorial/data_files/volvox_microarray.bw.conf docs/tutorial/data_files/volvox_sine.bw.conf docs/tutorial/data_files/volvox-sorted.bam.conf docs/tutorial/data_files/volvox-sorted.bam.coverage.conf docs/tutorial/data_files/volvox-paired.bam.conf docs/tutorial/data_files/volvox.vcf.conf docs/tutorial/data_files/volvox_fromconfig.conf docs/tutorial/data_files/volvox.gff3.conf docs/tutorial/data_files/volvox.gtf.conf docs/tutorial/data_files/volvox.sort.gff3.gz.conf docs/tutorial/data_files/volvox.sort.gff3.gz.htmlfeatures.conf docs/tutorial/data_files/volvox.sort.bed.gz.conf docs/tutorial/data_files/gvcf.vcf.gz.conf docs/tutorial/data_files/bookmarks.conf docs/tutorial/data_files/volvox.subsubparts.gff3.conf docs/tutorial/data_files/volvox-long-reads.fastq.sorted.bam.conf docs/tutorial/data_files/volvox-long-reads.fastq.sorted.cram.conf docs/tutorial/data_files/volvox.bb.conf docs/tutorial/data_files/volvox-sorted.cram.conf docs/tutorial/data_files/volvox-sv.bam.conf docs/tutorial/data_files/volvox-sv.cram.conf
++ bin/add-json.pl '{ "dataset_id": "volvox", "include": [ "../../raw/volvox/functions.conf" ] }' sample_data/json/volvox/trackList.json
++ bin/add-json.pl '{ "dataset_id": "volvox", "plugins": [ "HideTrackLabels", "NeatCanvasFeatures", "NeatHTMLFeatures" ] }' sample_data/json/volvox/trackList.json
++ bin/flatfile-to-json.pl --bed docs/tutorial/data_files/volvox_segment.bed --out sample_data/json/volvox --trackLabel ChromHMM --trackType CanvasFeatures --clientConfig '{"color": "{chromHMM}", "strandArrow": false}' --config '{"displayMode": "collapsed", "enableCollapsedMouseover": true, "category": "Miscellaneous" }'
++ bin/generate-names.pl --safeMode -v --out sample_data/json/volvox
+VCF file 'sample_data/json/volvox/../../raw/volvox/volvox.filtered.vcf.gz' not found, or not readable.  Skipping.
+GFF file 'sample_data/json/volvox/../../raw/volvox/volvox.sort.gff3.gz.1' not found, or not readable.  Skipping.
+GFF file 'sample_data/json/volvox/../../raw/volvox/volvox.sort.gff3.gz.1' not found, or not readable.  Skipping.
+VCF file 'sample_data/json/volvox/../../raw/volvox/gvcf.vcf.gz' not found, or not readable.  Skipping.
+VCF file 'sample_data/json/volvox/../../raw/volvox/volvox.test.vcf.gz' not found, or not readable.  Skipping.
+Tracks:
+    CDS
+    ChromHMM
+    Clones
+    DNA
+    EST
+    ExampleFeatures
+    Genes
+    Motifs
+    NameTest
+    ReadingFrame
+    Transcript
+    fromconfig
+    malformed_alignments
+    snps
+    volvox-long_reads
+    volvox-long_reads-cram
+    volvox-paired_bam
+    volvox-sorted-vcf
+    volvox-sorted_bam
+    volvox-sorted_bam_coverage
+    volvox-sorted_cram
+    volvox-sv
+    volvox-sv-cram
+    volvox_bb
+    volvox_bed_tabix
+    volvox_gff3
+    volvox_gff3_subsubparts
+    volvox_gff3_tabix
+    volvox_gff3_tabix_html
+    volvox_gtf
+    volvox_gvcf_test
+    volvox_microarray_bw_density
+    volvox_microarray_bw_xyplot
+    volvox_sine_density
+    volvox_sine_xyplot
+    volvox_vcf_test
+Sampled input stats:
+                      name input records 256
+        operation stream estimated count 1300
+                         operations made 1362
+                       total input bytes 14650
+        namerecs converted to operations 261
+           record stream estimated count 260
+                   avg record text bytes 56.2911877394636
+                       namerecs buffered 261
+                     total namerec bytes 14692
+Removing existing contents of target dir sample_data/json/volvox/names
+Hash store cache size: 2684 buckets
+Using 1 chars for sort log names (16 sort logs)
++ mkdir -p sample_data/raw
++ '[' '!' -e sample_data/raw/volvox ']'
++ ln -sf ../../docs/tutorial/conf_files/volvox.json sample_data/raw/
++ touch sample_data/json/volvox/successfully_run
+
+done.
+
+
+
+
+
+Formatting Yeast example data ...
++ rm -rf sample_data/json/yeast/
++ bin/prepare-refseqs.pl --fasta sample_data/raw/yeast_scaffolds/chr1.fa.gz --fasta sample_data/raw/yeast_scaffolds/chr2.fa.gzip --out sample_data/json/yeast/
++ gunzip -c sample_data/raw/yeast_scaffolds/chr1.fa.gz sample_data/raw/yeast_scaffolds/chr2.fa.gzip
++ '[' 0 -eq 1 ']'
++ bin/biodb-to-json.pl --conf sample_data/raw/yeast.json --out sample_data/json/yeast/
+Possible precedence issue with control flow operator at /usr/local/share/perl/5.26.1/Bio/DB/IndexedBase.pm line 845.
+
+working on refseq chrI
+working on track Genes
+working on track transcript_with_no_features
+
+working on refseq chrII
+working on track Genes
+working on track transcript_with_no_features
++ bin/add-json.pl '{ "dataset_id": "yeast" }' sample_data/json/yeast/trackList.json
++ bin/add-json.pl '{ "dataset_id": "yeast",  "plugins": [ "NeatHTMLFeatures","NeatCanvasFeatures","HideTrackLabels" ] }' sample_data/json/yeast/trackList.json
++ bin/generate-names.pl --dir sample_data/json/yeast/
+
+done.
+
