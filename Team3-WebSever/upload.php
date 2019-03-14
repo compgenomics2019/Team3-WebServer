@@ -13,7 +13,7 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 		// echo $_FILES["fileToUpload"]["name"];
 		echo $_FILES["fileToUpload"]["name"];
 		// echo $target_file
-		echo $fileType
+		// echo $fileType
         echo "Sorry, there was an error uploading your file.";
     }
 ?>
