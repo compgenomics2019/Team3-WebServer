@@ -14,3 +14,14 @@ to the `backend` directory before running this script as per
 ./deploy.sh
 ```
 
+### Test script
+
+In order to test it locally, use the following script. It will launch two
+servers for both frontend and backend.
+Please make sure you have installed `venv` and modules in `requirements.txt`
+to the `backend` directory before running this script as per
+`backend/README.md`.
+
+```sh
+./serve.sh
+```
