@@ -12,7 +12,7 @@ Python 3.7.1
 ## Server Installation
 ```
 git clone git@github.gatech.edu:compgenomics2019/Team3-WebServer.git
-cd Team3-WebServer/predictive_webserver_team3_backend
+cd Team3-WebServer/backend
 ```
 
 create virtualenv and activate it

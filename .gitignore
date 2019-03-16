@@ -1,4 +1,4 @@
 venv
-predictive_webserver_team3_backend/__pycache__/
-predictive_webserver_team3_backend/instance/
-predictive_webserver_team3_backend/.webassets-cache
+backend/__pycache__/
+backend/instance/
+backend/.webassets-cache
