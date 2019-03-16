@@ -9,24 +9,26 @@ pip 19.0.3
 Python 3.7.1
 ```
 
-## Server Installation
-```
-git clone git@github.gatech.edu:compgenomics2019/Team3-WebServer.git
-cd Team3-WebServer/backend
-```
+## Set up venv and install dependencies
 
-create virtualenv and activate it
+For a fresh clone of the repository, you need following steps
+to install the dependencies for backend server.
+
+**Within `backend` directory**, run the following command:
 
 ```
 python3 -m venv venv
 . venv/bin/activate
+pip3 install -r requirements.txt
+deactivate
 ```
 
-Install software with correct versions, and run Flask server
-```
-pip3 install -r requirements.txt --no-index
-export FLASK_APP=server.py  FLASK_ENV=development
-flask run
+Then go back to the parent directory and run:
 
 ```
-Open http://127.0.0.1:5000/
+./serve.sh
+```
+
+Checkout http://127.0.0.1:5000/
+
+
