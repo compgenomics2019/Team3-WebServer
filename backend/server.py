@@ -67,3 +67,5 @@ def upload_file():
         f = request.files['the_file']
         f.save('/var/www/uploads/uploaded_file.txt')
 
+if __name__ == "__main__":
+    app.run()
