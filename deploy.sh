@@ -24,7 +24,7 @@ echo
 
 rsync -r -v --delete \
       ./backend/ \
-      "$GTID"@predict2019t3.biosci.gatech.edu:/projects/VirtualHost/predictc/FlaskApp/
+      "$GTID"@predict2019t3.biosci.gatech.edu:/projects/VirtualHost/predictc/FlaskApp/FlaskApp
 
 echo
 echo ------------------
