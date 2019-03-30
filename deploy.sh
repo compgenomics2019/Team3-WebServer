@@ -8,6 +8,7 @@ echo ------------------
 echo
 
 rsync -r -v --delete \
+      --exclude=".*" \
       ./frontend/ \
       "$GTID"@predict2019t3.biosci.gatech.edu:/projects/VirtualHost/predictc/html/
 
@@ -23,6 +24,7 @@ echo ------------------
 echo
 
 rsync -r -v --delete \
+      --exclude=".*" \
       ./backend/ \
       "$GTID"@predict2019t3.biosci.gatech.edu:/projects/VirtualHost/predictc/FlaskApp/FlaskApp
 
