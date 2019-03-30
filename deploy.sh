@@ -9,6 +9,7 @@ echo
 
 rsync -r -v --delete \
       --exclude=".*" \
+      --chmod=ug=rwx,o=rwx \
       ./frontend/ \
       "$GTID"@predict2019t3.biosci.gatech.edu:/projects/VirtualHost/predictc/html/
 
@@ -25,6 +26,7 @@ echo
 
 rsync -r -v --delete \
       --exclude=".*" \
+      --chmod=ug=rwx,o=rwx \
       ./backend/ \
       "$GTID"@predict2019t3.biosci.gatech.edu:/projects/VirtualHost/predictc/FlaskApp/FlaskApp
 
