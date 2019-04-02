@@ -1,27 +1,29 @@
 
 ## Team3 Web Server Group
 
-### Deploy script
+### Test and Deployment
 
-The following script will copy the frontend and backend files to the server
-at predict2019t3.biosci.gatech.edu .
-It will ask for your GT username to proceed.
-Please make sure you have installed `venv` and modules in `requirements.txt`
-to the `backend` directory before running this script as per
-`backend/README.md`.
+Please follow `backend/README.md` to install `venv` and modules
+in `requirements.txt to the `backend` directory.
 
-```sh
-./deploy.sh
-```
-
-### Test script
-
-In order to test it locally, use the following script. It will launch two
-servers for both frontend and backend.
-Please make sure you have installed `venv` and modules in `requirements.txt`
-to the `backend` directory before running this script as per
-`backend/README.md`.
+To test the web application on your own computer, start the flask
+webserver with the following script and open your browser at
+http://localhost:9981/index.html :
 
 ```sh
 ./serve.sh
 ```
+
+Your code will be automatically (within one minute) deployed to the
+server once you push to the master branch on github.
+However, currently there are some configuration issues with the
+proxy of the server. To use the application on server, please
+run `./server_proxy.sh` and open your browser at
+http://localhost:8864/index.html . The script will setup a
+proxy between your computer and the server port at 9981.
+
+If we need to add dependencies (i.e. python modules) later, just add it to
+`backend/requirements.txt` and push to master.
+The server will handle it automatically.
+
+
