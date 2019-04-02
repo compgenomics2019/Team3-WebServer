@@ -2,3 +2,4 @@ backend/venv
 backend/__pycache__/
 backend/instance/
 backend/.webassets-cache
+server.log
