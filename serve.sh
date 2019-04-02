@@ -9,7 +9,7 @@ FLASK_BIN=$VENV_PATH/bin/flask
 
 cd backend
 
-FLASK_APP=server.py FLASK_RUN_PORT=9981 FLASK_ENV=development \
+FLASK_APP=server.py FLASK_RUN_PORT=9981 \
   $FLASK_BIN run --host=0.0.0.0 &
 
 wait
