@@ -22,4 +22,8 @@ run `./server_proxy.sh` and open your browser at
 http://localhost:8864/index.html . The script will setup a
 proxy between your computer and the server port at 9981.
 
+If we need to add dependencies (i.e. python modules) later, just add it to
+`backend/requirements.txt` and push to master.
+The server will handle it automatically.
+
 
