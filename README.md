@@ -7,7 +7,8 @@ Please follow `backend/README.md` to install `venv` and modules
 in `requirements.txt to the `backend` directory.
 
 To test the web application on your own computer, start the flask
-webserver with the following script:
+webserver with the following script and open your browser at
+http://localhost:9981/index.html :
 
 ```sh
 ./serve.sh
