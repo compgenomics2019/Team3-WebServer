@@ -32,7 +32,7 @@ def update_status(res_dir, status):
         f.write(status)
     return True
 
-@app.route('/service/upload', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
