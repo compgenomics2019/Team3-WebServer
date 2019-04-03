@@ -4,6 +4,7 @@ import flask
 import os
 import sys
 import tempfile
+import base64
 
 FRONT_END = os.path.join(os.path.dirname(__file__), "../frontend/")
 app = Flask(
@@ -54,7 +55,8 @@ def upload_file():
         run_pipeline(RES_DIR)
         update_status(RES_DIR, "running")
 
-        return flask.jsonify({"ok": True, "res_id": RES_DIR, "message": ""})
+        return flask.jsonify({"ok": True, "res_id": base64.b64encode(RES_DIR.encode()).decode(),
+                              "message": ""})
     return '''
     <!doctype html>
     <title>Upload new File (testing)</title>
@@ -65,11 +67,22 @@ def upload_file():
     </form>
     '''
 
-@app.route('/result')
-def show_result():
-    ## TODO: get variable
-    return flask.render_template("result.html", title = "Hello Jinja2")
+def ResId2Dir(RES_ID):
+    if RES_ID == "test1":
+        return os.path.join(app.root_path, 'sample_res')
+    else:
+        return base64.b64decode(RES_ID).decode()
 
+@app.route('/result/<RES_ID>')
+def show_result(RES_ID):
+    "OUTPUT.gff3"
+    RES_DIR = ResId2Dir(RES_ID)
+    return flask.render_template("result.html", title = "Hello Jinja2", RES_DIR = RES_DIR)
+
+@app.route('/result/<RES_ID>/<filename>')
+def get_res_content(RES_ID, filename):
+    RES_DIR = ResId2Dir(RES_ID)
+    return flask.send_from_directory(RES_DIR, filename)
 
 if __name__ == "__main__":
     app.run()
