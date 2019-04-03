@@ -10,7 +10,7 @@
 				}
 			body{ 
 					height: 100%;
-					background-color: DimGray;
+					background-color: white;
 					margin:0px; 
 			}
 			a {
@@ -33,14 +33,6 @@
 							clear: left;
 							vertical-align: top;
 			}
-			div#topLinks1 {
-							height: 100%;
-							float: center;
-							width: 100%;
-							display: table-cell;
-							color: white;
-							vertical-align: middle;
-			}
 			div#top > div{
 				height: 100%;
 				color: white;
@@ -49,12 +41,12 @@
 			}
 			
 			div#middle{ 
-								background-color: 
-								DimGray; min-width:800px; 
+								background-color: white; 
+								min-width:800px; 
 								position:relative;
 			}
 			div#middle > div{ 
-											background-color: DimGray;  
+											background-color: white;  
 											width:25%; 
 											
 											display:block;
@@ -77,7 +69,8 @@
 			}
 			div#bottom{ 
 								background-color: white; 
-								clear:left;height:600px;
+								clear:left;
+								height:300px;
 								position:relative;
 								width: 100%;
 								display: table;
@@ -106,9 +99,9 @@
 									float: center;
 									width: 75%;
 									margin: auto;
-									margin-top: 20%;
+									margin-top: 10%;
 									text-align: center;
-									height: 20% ;
+									height: 40% ;
 									background-color: orange;
 									font-size: 30px;
 									<!-- display: inline-block; -->
@@ -141,6 +134,7 @@
 			
 			.bg { 
 						/* The image used */
+						background-color: DimGray;
 						background-image: url("img/pattern.jpg");
 
 						/* Full height */
@@ -199,7 +193,10 @@
 		
 		
 	</body>
-	
+		<div id="middle">
+			<h2>About</h2>
+			<p>LASSIE stands for Listeria ASSemblIEs comparison. The goal of LASSIE is strain identification of Listeria isolates and the identification of their antibiotic resistance and virulence factors. Click 'Start Pipeline' to begin! Upload your trimmed fastq files and LASSIE will do the rest. Behind the scenes your fastq files will be assembled into a genome, scanned for antibiotic resistance and virulence factors, and finally the distance between your isolate and 20 known Listeria strains will be found.</p>
+		</div>
 		<div id="bottom">
 		
 			<div id="lhs">
