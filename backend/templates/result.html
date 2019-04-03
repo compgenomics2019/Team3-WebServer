@@ -12,4 +12,19 @@
     <div>
         <p>Check <a href="/result/test1">sample result page</a></p>
     </div>
+
+    <pre id="testgff">
+    </pre>
+
+    <script>
+     async function load_gff() {
+         const gff_file = window.location.pathname + "/OUTPUT.gff3";
+         let response = await fetch(gff_file);
+         let dom = document.getElementById("testgff");
+         if (!response.ok)
+             dom.innerHTML = response.statusText;
+         dom.innerHTML = await response.text();
+     }
+     load_gff()
+    </script>
 </body>

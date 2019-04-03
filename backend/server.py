@@ -77,7 +77,8 @@ def ResId2Dir(RES_ID):
 def show_result(RES_ID):
     "OUTPUT.gff3"
     RES_DIR = ResId2Dir(RES_ID)
-    return flask.render_template("result.html", title = "Hello Jinja2", RES_DIR = RES_DIR)
+    return flask.render_template("result.html", title = "Hello Jinja2", RES_DIR = RES_DIR,
+                                 RES_ID = RES_ID)
 
 @app.route('/result/<RES_ID>/<filename>')
 def get_res_content(RES_ID, filename):
