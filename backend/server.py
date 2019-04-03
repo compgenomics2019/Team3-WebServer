@@ -65,6 +65,11 @@ def upload_file():
     </form>
     '''
 
+@app.route('/result')
+def show_result():
+    ## TODO: get variable
+    return flask.render_template("result.html", title = "Hello Jinja2")
+
 
 if __name__ == "__main__":
     app.run()
