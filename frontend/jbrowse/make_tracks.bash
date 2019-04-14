@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #inDir="/mnt/c/Users/miles_000/Downloads/BIOL_7210/ncbi-genomes-2019-04-08"
-inDir="/mnt/c/Users/miles_000/Downloads/BIOL_7210/small_test"
+inDir="/mnt/c/Users/miles_000/Downloads/BIOL_7210/LeastIdentity"
 outDir="/mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebServer/frontend/jbrowse/data/"
 
-# Make the reference file
+#Make the reference file
 echo "Making the references"
 for file in $inDir/*.fna; do
 	base=$(basename $file .fna) # extract the basename of a file (remove path and extension)
@@ -33,7 +33,9 @@ for file in $inDir/*.gff; do
 	base=${base/./_} # replace the period with an underscore
 	trackDir="$outDir""$base"
 	echo $trackDir
-	echo "[datasets.$base]
+	echo "[general]
+dataset_id = $base
+[datasets.$base]
 url  = ?data=data/$base
 name = $base
 " >> /mnt/c/Users/miles_000/Downloads/BIOL_7210/Team3-WebServer/frontend/jbrowse/jbrowse.conf
