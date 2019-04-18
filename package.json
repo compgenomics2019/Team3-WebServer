@@ -1,0 +1,20 @@
+{
+  "name": "dep",
+  "version": "1.0.0",
+  "description": "### Test and Deployment",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "npm": "^6.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.gatech.edu/compgenomics2019/Team3-WebServer.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
