@@ -2,3 +2,23 @@ package-lock.json binary
 npm-shrinkwrap.json binary
 yarn.lock binary
 data filter=lfs diff=lfs merge=lfs -text
+data/GCF_002208215_1_ASM220821v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_003031915_1_ASM303191v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_003032055_1_ASM303205v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_000307065_1_ASM30706v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_002025165_1_ASM202516v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_002285835_1_ASM228583v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_003030405_1_ASM303040v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_003433415_1_ASM343341v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_003812565_1_ASM381256v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_000195395_4_ASM19539v5_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_002285655_1_ASM228565v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_000438685_2_ASM43868v2_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_001188655_1_ASM118865v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_000209755_1_ASM20975v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_000218305_1_ASM21830v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_001454885_1_ASM145488v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_001548585_1_ASM154858v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_001999045_1_ASM199904v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_000021185_1_ASM2118v1_genomic filter=lfs diff=lfs merge=lfs -text
+data/GCF_001454865_1_ASM145486v1_genomic filter=lfs diff=lfs merge=lfs -text
