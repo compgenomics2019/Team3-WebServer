@@ -7,7 +7,8 @@ import tempfile
 import subprocess
 import base64
 
-FRONT_END = os.path.join(os.path.dirname(__file__), "../frontend/")
+SCRIPT_DIR = os.path.dirname(__file__)
+FRONT_END = os.path.join(SCRIPT_DIR, "../frontend/")
 app = Flask(
         __name__,
         static_url_path = "",
@@ -39,6 +40,7 @@ def run_pipeline(params):
 
     ### Using Popen, the process will run even python stops.
     subprocess.Popen(['sleep', '1000'])
+    #subprocess.Popen([os.path.join(SCRIPT_DIR, "scripts/assembly"), "other", "parameters.."])
 
     ### OUTPUT files should be saved inside RES_DIR
     update_status(RES_DIR, "pipeline launched")
