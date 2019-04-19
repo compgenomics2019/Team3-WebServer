@@ -17,6 +17,11 @@ app = Flask(
 # http://flask.pocoo.org/docs/1.0/quickstart
 # For how to write API endpoints and return JSON
 
+
+@app.route('/')
+def serve_root():
+    return app.send_static_file('index.html')
+
 @app.route('/flask')
 def test_flask():
     return "hello flask!"
