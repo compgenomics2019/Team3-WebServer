@@ -10,11 +10,11 @@ get_input () {
 			-b : Location of trimmed reverse (_2) reads  [required]
 			-c : Location of trimmed unpaired (UP) reads [required]
                         -o : Output directory [required]
-                        -k : Kmer range for spades (default=99,105,107,111)
+                        -k : Kmer range for spades (default=71,73,75,79)
                         -h : Print usage instructions"
 
   #Specifying deafult Arguments
-  kmer_length="99,105,107,111"
+  kmer_length="71,73,75,79"
 
   #Export kmer length to be used within xargs
   export kmer_length
