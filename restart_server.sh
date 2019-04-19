@@ -10,7 +10,7 @@ LOG_FILE=$DIR/server.log
 ps aux | grep $SEARCH_KEY | awk '{print $2}' | xargs -n 1 kill
 
 cd $DIR
-(cd backend && python3 -m venv venv && ./venv/bin/pip3 install -r requirements.txt)
+#(cd backend && python3 -m venv venv && ./venv/bin/pip3 install -r requirements.txt)
 
 nohup ./serve.sh $SEARCH_KEY >> $LOG_FILE &
 
