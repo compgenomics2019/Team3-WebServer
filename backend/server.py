@@ -62,15 +62,7 @@ def upload_file():
 
         return flask.jsonify({"ok": True, "res_id": base64.b64encode(RES_DIR.encode()).decode(),
                               "message": ""})
-    return '''
-    <!doctype html>
-    <title>Upload new File (testing)</title>
-    <h1>Upload new File (testing)</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
+    return flask.render_template("upload.html", title = "Start the pipeline")
 
 def ResId2Dir(RES_ID):
     if RES_ID == "test1":
@@ -82,7 +74,7 @@ def ResId2Dir(RES_ID):
 def show_result(RES_ID):
     "OUTPUT.gff3"
     RES_DIR = ResId2Dir(RES_ID)
-    return flask.render_template("result.html", title = "Hello Jinja2", RES_DIR = RES_DIR,
+    return flask.render_template("result.html", title = "Pipeline Result", RES_DIR = RES_DIR,
                                  RES_ID = RES_ID)
 
 @app.route('/result/<RES_ID>/<filename>')
