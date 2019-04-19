@@ -240,7 +240,7 @@
 			</script>
 			<button class="advanced" type="button" onclick="toggleAdvanced()">Advanced Options</button>
 			<div id="advanced" style="display: none;">
-				<br><span>Kmer Range: </span><input type="text" maxlength="128" name="kmer" value=""><br>
+				<br><span>Kmer Range with no spaces (default: 71,73,75,79): </span><input type="text" maxlength="128" name="kmer" id="kmer" value=""><br>
 			</div>
 			<br>
 			<br>
@@ -270,13 +270,19 @@
 				if(theform.CaptchaInput.value == ""){
 					why += "- Please Enter CAPTCHA Code.\n";
 				}
-				var kmers = str.split(",");
-				if (kmers.length > 4) {
-					why += "kmer range must be between 1-4.\n";
+				if(theform.kmer.value != "") {
+					//why += theform.kmer.value
+					var kmers = theform.kmer.value.split(",");
+					if (kmers.length > 4) {
+						why += "kmer range must be between 1-4.\n";
+					}
+					// Check for non-numeric kmers
+					for (var i = 0; i < kmers.length; i++) {
+						if (isNaN(kmers[i])) {
+							why += "Kmer Range value " + kmers[i] + " is not numeric.\n";
+						}
+					}
 				}
-				why += "kmers length: ";
-				why += kmers.length;
-				why += "kmers length: ";
 				if(theform.CaptchaInput.value != ""){
 					if(ValidCaptcha(theform.CaptchaInput.value) == false){
 						why += "- The CAPTCHA Code Does Not Match.\n";
