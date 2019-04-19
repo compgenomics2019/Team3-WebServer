@@ -96,7 +96,8 @@ def upload_file():
 
         return flask.jsonify({"ok": True, "res_id": base64.b64encode(RES_DIR.encode()).decode(),
                               "message": "", "formdata": request.form,
-                              "pipeline_params": pipeline_params})
+                              "pipeline_params": pipeline_params,
+                              "result_link": request.host + "/result/" + base64.b64encode(RES_DIR.encode()).decode()})
     return flask.render_template("upload.html", title = "Start the pipeline")
 
 def ResId2Dir(RES_ID):
