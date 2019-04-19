@@ -208,15 +208,22 @@
 	<body>
 		<div id="top">
 			<div style="transform: translate(-0%, -70%);"><a href="index.html" class="fill-div">Home</a></div>
+			<div style="transform: translate(-0%, -70%);"><a href="start.html" class="fill-div">Pipeline</a></div>
 			<div style="transform: translate(-0%, -70%);"><a href="jbrowse.html" class="fill-div">JBrowse</a></div>
 		</div>
 		
-		<p>Upload your trimmed fastq files. LASSIE will assemble a genome, scanned for antibiotic resistance and virulence factors, and build a phylogenetic tree between your isolate and 20 known Listeria strains will be found.</p>
+		<h2>Start Pipeline</h2>
+		<p>Upload your trimmed fastq files and LASSIE will:</p>
+		<ul>
+			<li>Assemble Your Reads into a Genome</li>
+			<li>Scan for Antibiotic Resistance and Virulence Factors</li>
+			<li>Build a Phylogenetic Tree</li>
+		</ul>
 		
 		<form action="upload.php" method="post" enctype="multipart/form-data" action="http://your-web-domain.com/cgi-bin/formmail.cgi" onsubmit="return checkform(this);">
-			Select a file to upload:
+			Select trimmed fastq file to upload:
 			<input type="file" name="fileToUpload" id="fileToUpload">
-			<input type="submit" value="Upload" name="submit">
+			<input type="submit" value="Start Pipeline" name="submit">
 			<br>
 <div class="capbox">
 
