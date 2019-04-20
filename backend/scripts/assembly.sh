@@ -48,11 +48,11 @@ cp $output_directory/assembled/scaffolds.fasta ./UserSeq
 
 # The following script calculates the mash distance between the user sequence and 20 reference sequence.
 # It then builds a distance matrix based on those values and outputs a new Newick Tree 
-./test.sh
+./scripts/test.sh
 
 # Copy the Newick Tree to the output directory and remove it from the script directory
-cp ./NewickTree $output_directory/UserTree
-rm ./NewickTree
+cp ./scripts/NewickTree $output_directory/NewickTree
+rm ./scripts/NewickTree
 
 # readlink copies the address of the required genomes for comparison into the text file being created.
 #readlink -e /projects/VirtualHost/predictc/Listeria_Sequences/LeastIdentity/* > ReferenceList.txt
