@@ -51,8 +51,8 @@ cp $output_directory/assembled/scaffolds.fasta ./UserSeq
 ./scripts/test.sh
 
 # Copy the Newick Tree to the output directory and remove it from the script directory
-cp ./scripts/NewickTree $output_directory/NewickTree
-rm ./scripts/NewickTree
+cp ./NewickTree $output_directory/NewickTree
+rm ./NewickTree
 
 # readlink copies the address of the required genomes for comparison into the text file being created.
 #readlink -e /projects/VirtualHost/predictc/Listeria_Sequences/LeastIdentity/* > ReferenceList.txt
@@ -70,14 +70,14 @@ mkdir -p $output_directory/annotation
 
 # RGI-CARD
 
-if [ -d "$mydir"/localDB ]; then rm -r "$mydir"/localDB; fi
+if [ -d ./localDB ]; then rm -r ./localDB; fi
 
 
 rgi load -i "$mydir"/annotation/card/card.json --card_annotation "$mydir"/annotation/card/nucleotide_fasta_protein_homolog_model.fasta --local
 rgi main -i $output_directory/assembled/contigs.fasta -o "$mydir"/card_out.temp --input_type contig --local
 python3 "$mydir"/convert_rgi.py -i "$mydir"/card_out.temp.txt -o $output_directory/annotation/card.temp
 
-if [ -d "$mydir"/localDB ]; then rm -r "$mydir"/localDB; fi
+if [ -d ./localDB ]; then rm -r ./localDB; fi
 rm "$mydir"/*.temp*
 
 # VFDB
