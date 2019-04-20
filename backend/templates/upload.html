@@ -49,6 +49,19 @@
 				width: 100%;
 				text-decoration: none;
 			}
+			
+			div#lhs {
+				width: 50%;
+				min-width:350px;
+				display: table-cell;
+				position: relative;
+			}
+			div#rhs {
+				width: 50%;
+				min-width:350px;
+				display: table-cell;
+			}
+			
 			.capbox {
 				background-color: #92D433;
 				border: #B3E272 0px solid;
@@ -93,71 +106,72 @@
 			<div style="transform: translate(-0%, -70%);"><a href="jbrowse.html" class="fill-div">JBrowse</a></div>
 		</div>
 		
-		<h2>LASSIE Pipeline</h2>
-		<span>Upload your trimmed fastq files (minimum read length 79 bp) and LASSIE will:</span>
-		<ul>
-			<li>Assemble Your Reads into a Genome</li>
-			<li>Scan for Antibiotic Resistance and Virulence Factors</li>
-			<li>Build a Phylogenetic Tree</li>
-			<li>Find the Closest Listeria Strain to Your Input</li>
-			<li>Email After Completion</li>
-		</ul>
+		<div id="lhs">
+			<h2>LASSIE Pipeline</h2>
+			<span>Upload your trimmed fastq files (minimum read length 79 bp) and LASSIE will:</span>
+			<ul>
+				<li>Assemble Your Reads into a Genome</li>
+				<li>Scan for Antibiotic Resistance and Virulence Factors</li>
+				<li>Build a Phylogenetic Tree</li>
+				<li>Find the Closest Listeria Strain to Your Input</li>
+				<li>Email After Completion</li>
+			</ul>
 
 
-    <!-- I disabled the checkform function for now as it interfere with file uploading
-         <form method="post" enctype=multipart/form-data onsubmit="return checkform(this);">
-    -->
-    <form method="post" enctype=multipart/form-data>
-			  <h3>Select trimmed fastq file to upload: </h3>
+		<!-- I disabled the checkform function for now as it interfere with file uploading
+			 <form method="post" enctype=multipart/form-data onsubmit="return checkform(this);">
+		-->
+		<form method="post" enctype=multipart/form-data>
+				  <h3>Select trimmed fastq file to upload: </h3>
 
-			<span>Select forward fastq reads  </span>
-			<input type="file" name="forward" id="forward" required><br><br>
+				<span>Select forward fastq reads  </span>
+				<input type="file" name="forward" id="forward" required><br><br>
 
-			<span>Select reverse fastq reads     </span>
-			<input type="file" name="reverse" id="reverse" required><br><br>
+				<span>Select reverse fastq reads     </span>
+				<input type="file" name="reverse" id="reverse" required><br><br>
 
-			<span>Select unpaired fastq reads  </span>
-			<input type="file" name="unpaired" id="unpaired" required><br><br>
+				<span>Select unpaired fastq reads  </span>
+				<input type="file" name="unpaired" id="unpaired" required><br><br>
 
-			<span>Email: </span>
-			<input type="text" maxlength="128" name="email" id="email" value="" required><br><br>
-		
-			  <script>
-				 // Script for toggling Advanced Options
-				 function toggleAdvanced() {
-					   var x = document.getElementById("advanced");
-					   if (x.style.display === "block") {
-						     x.style.display = "none";
-					   } else {
-						     x.style.display = "block";
-					   }
-					   return false;
-				 }
-			  </script>
-			  <button class="advanced" type="button" onclick="toggleAdvanced()">Advanced Options</button>
-			  <div id="advanced" style="display: none;">
-					<br><span>Kmer Range with no spaces (default: 71,73,75,79): </span>
-					<input type="text" maxlength="128" name="kmer" id="kmer" value="">
-			  </div>
-			  <br>
-			  <br>
+				<span>Email: </span>
+				<input type="text" maxlength="128" name="email" id="email" value=""><br><br>
+			
+				  <script>
+					 // Script for toggling Advanced Options
+					 function toggleAdvanced() {
+						   var x = document.getElementById("advanced");
+						   if (x.style.display === "block") {
+								 x.style.display = "none";
+						   } else {
+								 x.style.display = "block";
+						   }
+						   return false;
+					 }
+				  </script>
+				  <button class="advanced" type="button" onclick="toggleAdvanced()">Advanced Options</button>
+				  <div id="advanced" style="display: none;">
+						<br><span>Kmer Range with no spaces (default: 71,73,75,79): </span>
+						<input type="text" maxlength="128" name="kmer" id="kmer" value="">
+				  </div>
+				  <br>
+				  <br>
 
-			  <input type="submit" value=Upload name="submit">
-			  <br>
-		    <div class="capbox">
+				  <input type="submit" value=Upload name="submit">
+				  <br>
+				<div class="capbox">
 
-		        <div id="CaptchaDiv"></div>
+					<div id="CaptchaDiv"></div>
 
-			      <div class="capbox-inner">
-			          Type the above number:<br>
+					  <div class="capbox-inner">
+						  Type the above number:<br>
 
-			          <input type="hidden" id="txtCaptcha">
-			          <input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+						  <input type="hidden" id="txtCaptcha">
+						  <input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
 
-			      </div>
-		    </div>
-		    <br><br>
-    </form>
+					  </div>
+				</div>
+				<br><br>
+		</form>
 
 		<script type="text/javascript">
 			// Captcha Script
@@ -174,50 +188,62 @@
 					if (kmers.length > 4) {
 						why += "kmer range must be between 1-4.\n";
 					}
-					// Check for non-numeric kmers
-					for (var i = 0; i < kmers.length; i++) {
-						if (isNaN(kmers[i])) {
-							why += "Kmer Range value " + kmers[i] + " is not numeric.\n";
+					if(theform.kmer.value != "") {
+						//why += theform.kmer.value
+						var kmers = theform.kmer.value.split(",");
+						if (kmers.length > 4) {
+							why += "kmer range must be between 1-4.\n";
+						}
+						// Check for non-numeric kmers
+						for (var i = 0; i < kmers.length; i++) {
+							if (isNaN(kmers[i])) {
+								why += "Kmer Range value " + kmers[i] + " is not numeric.\n";
+							}
 						}
 					}
-				}
-				if(theform.CaptchaInput.value != ""){
-					if(ValidCaptcha(theform.CaptchaInput.value) == false){
-						why += "- The CAPTCHA Code Does Not Match.\n";
+					if(theform.CaptchaInput.value != ""){
+						if(ValidCaptcha(theform.CaptchaInput.value) == false){
+							why += "- The CAPTCHA Code Does Not Match.\n";
+						}
+					}
+					if(why != ""){
+						alert(why);
+						return false;
 					}
 				}
-				if(why != ""){
-					alert(why);
-					return false;
+
+				var a = Math.ceil(Math.random() * 9)+ '';
+				var b = Math.ceil(Math.random() * 9)+ '';
+				var c = Math.ceil(Math.random() * 9)+ '';
+				var d = Math.ceil(Math.random() * 9)+ '';
+				var e = Math.ceil(Math.random() * 9)+ '';
+
+				var code = a + b + c + d + e;
+				document.getElementById("txtCaptcha").value = code;
+				document.getElementById("CaptchaDiv").innerHTML = code;
+
+				// Validate input against the generated number
+				function ValidCaptcha(){
+				var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+				var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+				if (str1 == str2){
+				return true;
+				}else{
+				return false;
 				}
-			}
+				}
 
-			var a = Math.ceil(Math.random() * 9)+ '';
-			var b = Math.ceil(Math.random() * 9)+ '';
-			var c = Math.ceil(Math.random() * 9)+ '';
-			var d = Math.ceil(Math.random() * 9)+ '';
-			var e = Math.ceil(Math.random() * 9)+ '';
-
-			var code = a + b + c + d + e;
-			document.getElementById("txtCaptcha").value = code;
-			document.getElementById("CaptchaDiv").innerHTML = code;
-
-			// Validate input against the generated number
-			function ValidCaptcha(){
-			var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
-			var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
-			if (str1 == str2){
-			return true;
-			}else{
-			return false;
-			}
-			}
-
-			// Remove the spaces from the entered and generated code
-			function removeSpaces(string){
-			return string.split(' ').join('');
-			}
-		</script>
+				// Remove the spaces from the entered and generated code
+				function removeSpaces(string){
+				return string.split(' ').join('');
+				}
+			</script>
+		</div>
+		
+		<div id="rhs">
+			<img src="/img/gff_sample.PNG" alt="Sample GFF Visualization">
+			<img src="/img/phylo_sample.PNG" alt="Sample Phylogenetic Tree">
+		</div>
 		
 	</body>
 </html>
