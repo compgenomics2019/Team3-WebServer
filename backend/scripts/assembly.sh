@@ -97,5 +97,6 @@ cat $output_directory/vfdb.temp $output_directory/card.temp > $output_directory/
 rm $output_directory/*.temp*
 
 #mail user on completion
-
+echo start sending email >> $output_directory/running.log
 ./mail.py --to $email_id --resid $res_id
+echo finished sending email >> $output_directory/running.log
