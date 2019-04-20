@@ -11,6 +11,8 @@ get_input () {
 			-c : Location of trimmed unpaired (UP) reads [required]
                         -o : Output directory [required]
                         -k : Kmer range for spades (default=71,73,75,79)
+			-e : email id for reporting [required]
+			-i : result id [required]
                         -h : Print usage instructions"
 
   #Specifying deafult Arguments
@@ -20,13 +22,15 @@ get_input () {
   export kmer_length
 
   #Getopts block, will take in the arguments as inputs and assign them to variables
-  while getopts "a:b:c:o:k:h" option; do
+  while getopts "a:b:c:o:k:e:i:h" option; do
           case $option in
                   a) in1=$OPTARG;;
 		  b) in2=$OPTARG;;
 		  c) in3=$OPTARG;;
                   o) output_directory=$OPTARG;;
                   k) kmer_length=$OPTARG;;
+		e) email_id=$OPTARG;;
+		i) res_id=$OPTARG;;
                   h) echo "$usage"
                         exit 0;;
                  \?) echo "Invalid option."
@@ -41,7 +45,7 @@ get_input "$@"
 mkdir -p  $output_directory
 spades.py -k $kmer_length -1 $in1 -2 $in2 -s $in3 --careful --cov-cutoff auto -o $output_directory
 #mkdir -p $output_directory/quast
-quast.py $output_directory/assembled/contigs.fasta -o $output_directory
+quast.py $output_directory/contigs.fasta -o $output_directory
 
 # Copy the Assembled User Sequence to the folder where the script is being executed.
 cp $output_directory/scaffolds.fasta ./UserSeq
@@ -91,3 +95,7 @@ python3 "$mydir"/vfdb_out.py -i $output_directory/contigs.fasta -o $output_direc
 cat $output_directory/vfdb.temp $output_directory/card.temp > $output_directory/annotation.gff3
 
 rm $output_directory/*.temp*
+
+#mail user on completion
+
+./mail.py --to $email_id --resid $res_id

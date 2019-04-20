@@ -2,6 +2,7 @@ from flask import Flask, session, redirect, url_for, escape, request
 import flask
 
 import os
+import re
 import sys
 import tempfile
 import subprocess
@@ -33,13 +34,15 @@ def run_pipeline(params):
     # if the process is successful or failed, run update_status() or echo something > RES_DIR/STATUS
     ### Parameters for the pipeline
     RES_DIR = params['RES_DIR']
+    RES_ID = params['RES_ID']
     INPUT_forward = params['INPUT_forward']
     INPUT_reverse = params['INPUT_reverse']
     INPUT_unpaired = params['INPUT_unpaired']
     INPUT_kmer = params['kmer']
+    INPUT_email = params['email']
 
     ### Using Popen, the process will run even python stops.
-    subprocess.Popen([os.path.join(SCRIPT_DIR, "scripts/assembly.sh"), "-a", INPUT_forward, "-b", INPUT_reverse, "-c", INPUT_unpaired, "-o", RES_DIR, "-k", INPUT_kmer])
+    subprocess.Popen([os.path.join(SCRIPT_DIR, "scripts/assembly.sh"), "-a", INPUT_forward, "-b", INPUT_reverse, "-c", INPUT_unpaired, "-o", RES_DIR, "-k", INPUT_kmer, "-e", INPUT_email, "-i", RES_ID])
 
     ### OUTPUT files should be saved inside RES_DIR
     update_status(RES_DIR, "pipeline launched")
@@ -72,18 +75,26 @@ def upload_file():
         input_file_reverse = request.files['reverse']
         input_file_unpaired = request.files['unpaired']
         input_kmer = request.form['kmer']
+        input_email = rquest.form['email'].strip()
+        if (not re.fullmatch("[^@]+@[^@]+\.[^@]+", input_email)) or re.fullmatch(" ", input_email):
+            return flask.jsonify({"ok": False, "message": "invalid email"})
         if input_kmer == "":
             input_kmer = "71,73,75,79"
 
         ## RES_DIR will be returned and used later
         RES_DIR = tempfile.mkdtemp()
+        RES_ID = base64.b64encode(RES_DIR.encode()).decode()
 
         pipeline_params = {}
         pipeline_params['RES_DIR'] = RES_DIR
+        pipeline_params['RES_ID'] = RES_ID
         pipeline_params['INPUT_forward'] = os.path.join(RES_DIR, "INPUT_forward.fastq")
         pipeline_params['INPUT_reverse'] = os.path.join(RES_DIR, "INPUT_reverse.fastq")
         pipeline_params['INPUT_unpaired'] = os.path.join(RES_DIR, "INPUT_unpaired.fastq")
         pipeline_params['kmer'] = input_kmer
+
+        ## TODO
+        pipeline_params['email'] = input_email
 
         input_file_forward.save(pipeline_params['INPUT_forward'])
         input_file_reverse.save(pipeline_params['INPUT_reverse'])
@@ -93,10 +104,10 @@ def upload_file():
         run_pipeline(pipeline_params)
         update_status(RES_DIR, "running")
 
-        return flask.jsonify({"ok": True, "res_id": base64.b64encode(RES_DIR.encode()).decode(),
+        return flask.jsonify({"ok": True, "res_id": RES_ID,
                               "message": "", "formdata": request.form,
                               "pipeline_params": pipeline_params,
-                              "result_link": "/result/" + base64.b64encode(RES_DIR.encode()).decode()})
+                              "result_link": "/result/" + RES_ID})
     return flask.render_template("upload.html", title = "Start the pipeline")
 
 def ResId2Dir(RES_ID):
