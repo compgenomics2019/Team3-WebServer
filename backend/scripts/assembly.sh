@@ -52,7 +52,10 @@ cp $output_directory/scaffolds.fasta ./UserSeq
 
 # The following script calculates the mash distance between the user sequence and 20 reference sequence.
 # It then builds a distance matrix based on those values and outputs a new Newick Tree
-./scripts/test.sh
+currentdir=`pwd`
+cd $output_directory
+$currentdir/scripts/test.sh
+cd $currentdir
 
 # Copy the Newick Tree to the output directory and remove it from the script directory
 cp ./NewickTree $output_directory/NewickTree
