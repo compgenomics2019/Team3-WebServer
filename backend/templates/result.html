@@ -1,15 +1,15 @@
 <!doctype html>
 <head>
 	<title>{{ title }}</title>
-	<link rel="icon" href="img/pattern.jpg">
+	<link rel="icon" href="/img/pattern.jpg">
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	
 	<script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
-	<script src="../../frontend/newick.js" type="text/javascript"></script>
-	<script src="../../frontend/d3.phylogram.js" type="text/javascript"></script>
+	<script src="/newick.js" type="text/javascript"></script>
+	<script src="/d3.phylogram.js" type="text/javascript"></script>
 	<style>
 			html {
 				height: 100%;
@@ -103,7 +103,8 @@
 
 				var result = [];
 
-				var headers=lines[0].split("\t");
+				// var headers=lines[0].split("\t");
+				var headers=["CHROM", "SOURCE", "FEATURE", "START", "STOP", "SCORE", "STRAND", "FRAME", "ATTRIBUTE"];
 				console.log(lines[0]);
 				console.log(lines[1]);
 
@@ -124,7 +125,8 @@
 			}
 
 
-			$.get("../backend/sample_res/OUTPUT.gff", function(data) {
+			$.get(
+			window.location.pathname + "/annotation.gff3", function(data) {
 						var processed = tsvJSON(data);
 						console.log(processed);
 						$('#table_id').DataTable( {
@@ -186,15 +188,15 @@
 	
 	
 	
-    <script>
-     async function load_gff() {
-         const gff_file = window.location.pathname + "/OUTPUT.gff3";
-         let response = await fetch(gff_file);
-         let dom = document.getElementById("testgff");
-         if (!response.ok)
-             dom.innerHTML = response.statusText;
-         dom.innerHTML = await response.text();
-     }
-     load_gff()
-    </script>
+    <!-- <script> -->
+     <!-- async function load_gff() { -->
+         <!-- const gff_file = window.location.pathname + "/OUTPUT.gff3"; -->
+         <!-- let response = await fetch(gff_file); -->
+         <!-- let dom = document.getElementById("testgff"); -->
+         <!-- if (!response.ok) -->
+             <!-- dom.innerHTML = response.statusText; -->
+         <!-- dom.innerHTML = await response.text(); -->
+     <!-- } -->
+     <!-- load_gff() -->
+    <!-- </script> -->
 </body>
