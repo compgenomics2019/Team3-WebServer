@@ -108,15 +108,18 @@
     <form method="post" enctype=multipart/form-data>
 			  <h3>Select trimmed fastq file to upload: </h3>
 
-			  <span>Select forward fastq reads  </span>
-        <input type="file" name="forward" id="forward" required><br><br>
+			<span>Select forward fastq reads  </span>
+			<input type="file" name="forward" id="forward" required><br><br>
 
-			  <span>Select reverse fastq reads     </span>
-        <input type="file" name="reverse" id="reverse" required><br><br>
+			<span>Select reverse fastq reads     </span>
+			<input type="file" name="reverse" id="reverse" required><br><br>
 
-			  <span>Select unpaired fastq reads  </span>
-        <input type="file" name="unpaired" id="unpaired" required><br><br>
+			<span>Select unpaired fastq reads  </span>
+			<input type="file" name="unpaired" id="unpaired" required><br><br>
 
+			<span>Email: </span>
+			<input type="text" maxlength="128" name="email" id="email" value=""><br><br>
+		
 			  <script>
 				 // Script for toggling Advanced Options
 				 function toggleAdvanced() {
