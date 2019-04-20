@@ -173,14 +173,20 @@
 				<br><br>
 		</form>
 
-			<script type="text/javascript">
-				// Captcha Script
+		<script type="text/javascript">
+			// Captcha Script
 
-				function checkform(theform){
-					var why = "";
+			function checkform(theform){
+				var why = "";
 
-					if(theform.CaptchaInput.value == ""){
-						why += "- Please Enter CAPTCHA Code.\n";
+				if(theform.CaptchaInput.value == ""){
+					why += "- Please Enter CAPTCHA Code.\n";
+				}
+				if(theform.kmer.value != "") {
+					//why += theform.kmer.value
+					var kmers = theform.kmer.value.split(",");
+					if (kmers.length > 4) {
+						why += "kmer range must be between 1-4.\n";
 					}
 					if(theform.kmer.value != "") {
 						//why += theform.kmer.value
