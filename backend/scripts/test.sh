@@ -15,7 +15,7 @@ python ./scripts/DM.py Sorted.txt
 #neighbor < Y
 fitch < Y
 
-python ./scripts/FinalEdits.py 
+python ./scripts/FinalEdits.py
 #python /projects/home/ssharma435/Team3-WebServer/backend/scripts/FinalEdits.py
 
 rm TrialSketch.msh
