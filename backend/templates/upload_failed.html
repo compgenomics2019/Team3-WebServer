@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <style>
+     table, td {
+         border: 1px solid #333;
+     }
+    </style>
+</head>
+<body>
+    <h2>Sorry that you job did not start successfully. The message from server:</h2>
+    <pre>{{ message }}</pre>
+    <h2>Your submitted form:</h2>
+    <table>
+        <tr>
+            {% for key in form.keys() %}
+            <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for key in form.keys() %}
+            <td>{{ form[key] }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</body>

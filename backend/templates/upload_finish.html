@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <p>Thanks for submitting your job. You will receive an email to
+        <pre>{{ params['email'] }}</pre> after the job is finished.</p>
+    <p>Your job ID is <pre>{{ RES_ID }}.</pre></p>
+
+    <h3>Testing (remove it later)</h4>
+    <p>res_dir is <pre>{{ params['RES_DIR'] }}</pre></p>
+    <p>INPUT_forward  is {{ params['INPUT_forward']  }}</p>
+    <p>INPUT_reverse  is {{ params['INPUT_reverse']  }}</p>
+    <p>INPUT_unpaired is {{ params['INPUT_unpaired'] }}</p>
+    <p>INPUT_kmer is {{ params['kmer'] }}</p>
+
+    <h4>Submitted form data</h4>
+    <table>
+        <tr>
+            {% for key in form.keys() %}
+            <th>{{ key }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for key in form.keys() %}
+            <td>{{ form[key] }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</body>
