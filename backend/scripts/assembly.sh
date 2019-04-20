@@ -57,7 +57,8 @@ cp $output_directory/scaffolds.fasta ./UserSeq
 # Copy the Newick Tree to the output directory and remove it from the script directory
 cp ./NewickTree $output_directory/NewickTree
 rm ./NewickTree
-
+cp ./LeastDistance.txt $output_directory/LeastDistance.txt
+rm ./LeastDistance.txt
 # readlink copies the address of the required genomes for comparison into the text file being created.
 #readlink -e /projects/VirtualHost/predictc/Listeria_Sequences/LeastIdentity/* > ReferenceList.txt
 #readlink -e InputFile >> ReferenceList.txt
