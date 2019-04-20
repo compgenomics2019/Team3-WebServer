@@ -45,7 +45,7 @@ get_input "$@"
 mkdir -p  $output_directory
 spades.py -k $kmer_length -1 $in1 -2 $in2 -s $in3 --careful --cov-cutoff auto -o $output_directory
 #mkdir -p $output_directory/quast
-quast.py $output_directory/assembled/contigs.fasta -o $output_directory
+quast.py $output_directory/contigs.fasta -o $output_directory
 
 # Copy the Assembled User Sequence to the folder where the script is being executed.
 cp $output_directory/scaffolds.fasta ./UserSeq
