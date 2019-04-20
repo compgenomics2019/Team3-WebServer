@@ -63,12 +63,14 @@ def upload_file():
         ## Check files exist
         for file in ['forward', 'reverse', 'unpaired']:
             if file not in request.files:
-                return flask.jsonify({"ok": False, "res_id": "", "message": "Missing file part",
-                                      "formdata": request.form})
+                return flask.render_template("upload_failed.html",
+                                             form = request.form,
+                                             message = "Missing file part")
             the_file = request.files[file]
             if the_file.filename == "":
-                return flask.jsonify({"ok": False, "res_id": "", "message": "No selected file",
-                                      "formdata": request.form})
+                return flask.render_template("upload_failed.html",
+                                             form = request.form,
+                                             message = "No selected file")
         ## TODO: check kmer parameter
 
         input_file_forward = request.files['forward']
@@ -105,10 +107,10 @@ def upload_file():
         run_pipeline(pipeline_params)
         update_status(RES_DIR, "running")
 
-        return flask.jsonify({"ok": True, "res_id": RES_ID,
-                              "message": "", "formdata": request.form,
-                              "pipeline_params": pipeline_params,
-                              "result_link": "/result/" + RES_ID})
+        return flask.render_template("upload_finish.html",
+                                     RES_ID = RES_ID,
+                                     params = pipeline_params,
+                                     form = request.form)
     return flask.render_template("upload.html", title = "Start the pipeline")
 
 def ResId2Dir(RES_ID):
