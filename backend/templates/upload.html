@@ -188,29 +188,23 @@
 					if (kmers.length > 4) {
 						why += "kmer range must be between 1-4.\n";
 					}
-					if(theform.kmer.value != "") {
-						//why += theform.kmer.value
-						var kmers = theform.kmer.value.split(",");
-						if (kmers.length > 4) {
-							why += "kmer range must be between 1-4.\n";
+					// Check for non-numeric kmers
+					for (var i = 0; i < kmers.length; i++) {
+						if (isNaN(kmers[i])) {
+							why += "Kmer Range value " + kmers[i] + " is not numeric.\n";
 						}
-						// Check for non-numeric kmers
-						for (var i = 0; i < kmers.length; i++) {
-							if (isNaN(kmers[i])) {
-								why += "Kmer Range value " + kmers[i] + " is not numeric.\n";
-							}
-						}
-					}
-					if(theform.CaptchaInput.value != ""){
-						if(ValidCaptcha(theform.CaptchaInput.value) == false){
-							why += "- The CAPTCHA Code Does Not Match.\n";
-						}
-					}
-					if(why != ""){
-						alert(why);
-						return false;
 					}
 				}
+				if(theform.CaptchaInput.value != ""){
+					if(ValidCaptcha(theform.CaptchaInput.value) == false){
+						why += "- The CAPTCHA Code Does Not Match.\n";
+					}
+				}
+				if(why != ""){
+					alert(why);
+					return false;
+				}
+			}
 
 				var a = Math.ceil(Math.random() * 9)+ '';
 				var b = Math.ceil(Math.random() * 9)+ '';
@@ -241,7 +235,7 @@
 		</div>
 		
 		<div id="rhs">
-			<img src="/img/gff_sample.PNG" alt="Sample GFF Visualization">
+			<img src="/img/gff_sample.PNG" alt="Sample GFF Visualization" style="width: 350px; height: 350px;">
 			<img src="/img/phylo_sample.PNG" alt="Sample Phylogenetic Tree">
 		</div>
 		
