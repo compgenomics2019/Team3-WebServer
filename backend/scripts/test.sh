@@ -23,6 +23,9 @@ fitch < Y
 python ./scripts/FinalEdits.py
 #python /projects/home/ssharma435/Team3-WebServer/backend/scripts/FinalEdits.py
 
+rm DistanceValuesForUserSequence.txt
+rm Name.txt
+rm Value.txt
 rm TrialSketch.msh
 rm Trial.txt
 rm Out.txt
