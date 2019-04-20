@@ -78,7 +78,7 @@ rgi main -i $output_directory/assembled/contigs.fasta -o "$mydir"/card_out.temp 
 python3 "$mydir"/convert_rgi.py -i "$mydir"/card_out.temp.txt -o $output_directory/annotation/card.temp
 
 if [ -d "$mydir"/localDB ]; then rm -r "$mydir"/localDB; fi
-rm *.temp*
+rm "$mydir"/*.temp*
 
 # VFDB
 
