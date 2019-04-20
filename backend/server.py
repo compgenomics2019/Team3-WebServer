@@ -83,6 +83,7 @@ def upload_file():
 
         ## RES_DIR will be returned and used later
         RES_DIR = tempfile.mkdtemp()
+        os.chmod(RES_FIR, 0o777)
         RES_ID = base64.b64encode(RES_DIR.encode()).decode()
 
         pipeline_params = {}
