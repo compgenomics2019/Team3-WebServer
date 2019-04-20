@@ -40,7 +40,7 @@ def run_pipeline(params):
 
     ### Using Popen, the process will run even python stops.
     subprocess.Popen(['sleep', '1000'])
-    #subprocess.Popen([os.path.join(SCRIPT_DIR, "scripts/assembly"), "other", "parameters.."])
+    #subprocess.Popen([os.path.join(SCRIPT_DIR, "scripts/assembly.sh"), "-a", INPUT_forward, "-b", INPUT_reverse, "-c", INPUT_unpaired, "-o", RES_DIR, "-k", INPUT_kmer])
 
     ### OUTPUT files should be saved inside RES_DIR
     update_status(RES_DIR, "pipeline launched")
