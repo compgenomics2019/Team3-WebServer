@@ -75,7 +75,7 @@ def upload_file():
         input_file_reverse = request.files['reverse']
         input_file_unpaired = request.files['unpaired']
         input_kmer = request.form['kmer']
-        input_email = rquest.form['email'].strip()
+        input_email = request.form['email'].strip()
         if (not re.fullmatch("[^@]+@[^@]+\.[^@]+", input_email)) or re.fullmatch(" ", input_email):
             return flask.jsonify({"ok": False, "message": "invalid email"})
         if input_kmer == "":
