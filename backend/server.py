@@ -2,6 +2,7 @@ from flask import Flask, session, redirect, url_for, escape, request
 import flask
 
 import os
+import re
 import sys
 import tempfile
 import subprocess
@@ -74,6 +75,9 @@ def upload_file():
         input_file_reverse = request.files['reverse']
         input_file_unpaired = request.files['unpaired']
         input_kmer = request.form['kmer']
+        input_email = rquest.form['email'].strip()
+        if (not re.fullmatch("[^@]+@[^@]+\.[^@]+", input_email)) or re.fullmatch(" ", input_email):
+            return flask.jsonify({"ok": False, "message": "invalid email"})
         if input_kmer == "":
             input_kmer = "71,73,75,79"
 
@@ -90,7 +94,7 @@ def upload_file():
         pipeline_params['kmer'] = input_kmer
 
         ## TODO
-        pipeline_params['email'] = "jialin@gatech.edu"
+        pipeline_params['email'] = input_email
 
         input_file_forward.save(pipeline_params['INPUT_forward'])
         input_file_reverse.save(pipeline_params['INPUT_reverse'])
