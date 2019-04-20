@@ -38,8 +38,8 @@ ncbi_to_strain_mapping = {
 
 
 # Converting NCBI codes in NewickTree to Strain Names , since that is what we care about
-for ncbi_code, strain_name in ncbi_to_strain_mapping.items():
-    FinalOutput = FinalOutput.replace(ncbi_code, strain_name)
+# for ncbi_code, strain_name in ncbi_to_strain_mapping.items():
+#     FinalOutput = FinalOutput.replace(ncbi_code, strain_name)
 
 Out = open('NewickTree', 'w')
 Out.write(FinalOutput)
