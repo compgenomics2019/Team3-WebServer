@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <head>
 	<link rel="icon" href="img/pattern.jpg">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">
-	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 	
 	<script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
 	<script src="newick.js" type="text/javascript"></script>
@@ -25,11 +26,6 @@
 			}
 			buildNewickNodes(newick)
 			
-			d3.phylogram.buildRadial('#radialtree', newick, {
-				width: 400,
-				skipLabels: true
-			})
-			
 			d3.phylogram.build('#phylogram', newick, {
 				width: 300,
 				height: 400
@@ -43,14 +39,14 @@
 		<meta charset="utf-8">
 		<title>Start Pipeline</title>
 		<style>
-		html {
-					height: 100%;
-				}
+			html {
+				height: 100%;
+			}
 			body{ 
-					height: 100%;
-					width: 100%;
-					background-color: white;
-					margin:0px; 
+				height: 100%;
+				width: 100%;
+				background-color: white;
+				margin:0px; 
 			}
 			a {
 				text-decoration: none
@@ -59,26 +55,18 @@
 				color: white;
 			}
 			a:visited {
-							color: white;
+				color: white;
 			}
 			div#top{ 
-							background-color: #232121; 
-							height:30px;
-							margin: auto;
-							font-size:36px; 
-							padding:20px 0px 0px 20px; 
-							fill: gray;
-							position:relative;
-							clear: left;
-							vertical-align: top;
-			}
-			div#topLinks1 {
-							height: 100%;
-							float: center;
-							width: 100%;
-							display: table-cell;
-							color: white;
-							vertical-align: middle;
+				background-color: #232121; 
+				height:30px;
+				margin: auto;
+				font-size:36px; 
+				padding:20px 0px 0px 20px; 
+				fill: gray;
+				position:relative;
+				clear: left;
+				vertical-align: top;
 			}
 			div#top > div{
 				height: 100%;
@@ -86,161 +74,16 @@
 				width: 20%;
 				display: inline-block;
 			}
-			
-			div#middle{ 
-								background-color: 
-								DimGray; min-width:800px; 
-								position:relative;
-			}
-			div#middle > div{ 
-											background-color: DimGray;  
-											width:25%; 
-											
-											display:block;
-											margin:auto;
-											height: 100%;
-											vertical-align: middle;
-											position:relative;
-											padding-top: 100px;
-											padding-bottom:100px;
-											<!-- position: relative; -->
-											<!-- top: 50%; -->
-											<!-- left: 50%; -->
-											<!-- /* bring your own prefixes */ -->
-											<!-- transform: translate(-50%, -50%); -->
-			}
-			div#middle > div > div > img{ 
-															background-color: DimGray;  
-															width:100%;
-															position:relative; 
-			}
-			div#bottom{ 
-								background-color: white; 
-								clear:left;height:600px;
-								position:relative;
-								width: 100%;
-								display: table;
-			}
-			
-			div#lhs {
-							width: 50%;
-							min-width:400px;
-							display: table-cell;
-								<!-- background-color:green; -->
-			}
-			div#rhs {
-							width: 50%;
-							min-width:400px;
-							display: table-cell;
-							<!-- background-color:orange; -->
-			}
-			
-			div#box {
-									border-radius: 15px;
-									border-width: 2px;
-									border-style: solid;
-									vertical-align: middle;
-									background-color: white;
-									text-align: center;
-									float: center;
-									width: 75%;
-									margin: auto;
-									margin-top: 20%;
-									text-align: center;
-									height: 20% ;
-									background-color: orange;
-									font-size: 30px;
-									<!-- display: inline-block; -->
-									<!-- padding-top: 50px; -->
-									<!-- padding-bottom: 50px; -->
-									<!-- border-color: CornflowerBlue; -->
-			
-			}
-
-			div#verticalCenterText {
-													margin: 0;
-													position: relative;
-													top: 50%;
-													left: 50%;
-													transform: translate(-50%, -30%);
-													text-align: center;
-													vertical-align: middle;
-			}
-			
 			a.fill-div {
-							position: relative;
-							top: 50%;
-							left: 50%;
-							transform: translate(-50%, -30%);
-							display: inline-block;
-							height: 100%;
-							width: 100%;
-							text-decoration: none;
+				position: relative;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -40%);
+				display: inline-block;
+				height: 100%;
+				width: 100%;
+				text-decoration: none;
 			}
-			
-			.bg { 
-						/* The image used */
-						background-image: url("img/pattern.jpg");
-
-						/* Full height */
-						height: 60%;
-						width: 100%;
-						min-width:800px;
-
-						top:0; /* Add a top and bottom position so the element */  
-						bottombottom:0; /* stretches to the height of the parent */ 
-						left:0;
-						<!-- opacity: 0.3; -->
-
-						/* Center and scale the image nicely */
-						background-position: center;
-						background-repeat: no-repeat;
-						background-size: cover;
-			}
-			
-						div#textBox {
-												background-color: rgb(56, 49, 39,  0.9);
-												margin: 0;
-												position: relative;
-												top: 50%;
-												left: 50%;
-												transform: translate(-50%, -50%);
-												text-align: center;
-												vertical-align: bottom;
-			}
-			.capbox {
-	background-color: #92D433;
-	border: #B3E272 0px solid;
-	border-width: 0px 12px 0px 0px;
-	display: inline-block;
-	*display: inline; zoom: 1; /* FOR IE7-8 */
-	padding: 8px 40px 8px 8px;
-	}
-
-.capbox-inner {
-	font: bold 11px arial, sans-serif;
-	color: #000000;
-	background-color: #DBF3BA;
-	margin: 5px auto 0px auto;
-	padding: 3px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	}
-
-#CaptchaDiv {
-	font: bold 17px verdana, arial, sans-serif;
-	font-style: italic;
-	color: #000000;
-	background-color: #FFFFFF;
-	padding: 4px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	width: 100%;
-	}
-#table_id {width: 100px;}
-#CaptchaInput { margin: 1px 0px 1px 0px; width: 135px; }
 
 		</style>
 	</head>
@@ -251,6 +94,7 @@
 
 		<div id="top">
 			<div style="transform: translate(-0%, -70%);"><a href="index.html" class="fill-div">Home</a></div>
+			<div style="transform: translate(-0%, -70%);"><a href="/upload" class="fill-div">Pipeline</a></div>
 			<div style="transform: translate(-0%, -70%);"><a href="jbrowse.html" class="fill-div">JBrowse</a></div>
 		</div>
 		
@@ -288,6 +132,7 @@
 						var processed = tsvJSON(data);
 						console.log(processed);
 						$('#table_id').DataTable( {
+							"scrollX": true,
 							data: processed,
 							columns: [
 								{ data: "CHROM" },
@@ -307,7 +152,7 @@
 				});
 </script>
 
-<table id="table_id" class="display" style="width:20%">
+<table id="table_id" class="display" style="width:100%;">
 	<thead>
 		<tr>
 			<th>CHROM</th>
@@ -340,11 +185,7 @@
 <table>
       <tr>
         <td>
-          <h2>Circular Dendrogram</h2>
-          <div id='radialtree'></div>
-        </td>
-        <td>
-          <h2>Phylogram</h2>
+          <h2>Phylogenetic Tree</h2>
           <div id='phylogram'></div>
         </td>
       </tr>

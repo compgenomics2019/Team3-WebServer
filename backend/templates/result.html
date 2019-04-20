@@ -76,11 +76,6 @@
 		}
 		buildNewickNodes(newick)
 		
-		d3.phylogram.buildRadial('#radialtree', newick, {
-			width: 400,
-			skipLabels: true
-		})
-		
 		d3.phylogram.build('#phylogram', newick, {
 			width: 300,
 			height: 400
@@ -180,14 +175,10 @@
 		</tfoot>
 	</table>
 	
-	<table>
+<table>
       <tr>
         <td>
-          <h2>Circular Dendrogram</h2>
-          <div id='radialtree'></div>
-        </td>
-        <td>
-          <h2>Phylogram</h2>
+          <h2>Phylogenetic Tree</h2>
           <div id='phylogram'></div>
         </td>
       </tr>
