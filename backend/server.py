@@ -4,9 +4,11 @@ import flask
 import os
 import sys
 import tempfile
+import subprocess
 import base64
 
-FRONT_END = os.path.join(os.path.dirname(__file__), "../frontend/")
+SCRIPT_DIR = os.path.dirname(__file__)
+FRONT_END = os.path.join(SCRIPT_DIR, "../frontend/")
 app = Flask(
         __name__,
         static_url_path = "",
@@ -26,9 +28,23 @@ def serve_root():
 def test_flask():
     return "hello flask!"
 
-def run_pipeline(res_dir):
+def run_pipeline(params):
     # run the pipeline here
     # if the process is successful or failed, run update_status() or echo something > RES_DIR/STATUS
+    ### Parameters for the pipeline
+    RES_DIR = params['RES_DIR']
+    INPUT_forward = params['INPUT_forward']
+    INPUT_reverse = params['INPUT_reverse']
+    INPUT_unpaired = params['INPUT_unpaired']
+    INPUT_kmer = params['kmer']
+
+    ### Using Popen, the process will run even python stops.
+    subprocess.Popen(['sleep', '1000'])
+    #subprocess.Popen([os.path.join(SCRIPT_DIR, "scripts/assembly"), "other", "parameters.."])
+
+    ### OUTPUT files should be saved inside RES_DIR
+    update_status(RES_DIR, "pipeline launched")
+
     return True
 
 def update_status(res_dir, status):
@@ -41,36 +57,48 @@ def update_status(res_dir, status):
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        # check if the post request has the file part
-        if 'file' not in request.files:
-            return flask.jsonify({"ok": False, "res_id": "", "message": "No file part"})
-        input_file = request.files['file']
 
-        # if user does not select file, browser also submit an empty part without filename
-        if input_file.filename == '':
-            return flask.jsonify({"ok": False, "res_id": "", "message": "No selected file"})
+        ## Check files exist
+        for file in ['forward', 'reverse', 'unpaired']:
+            if file not in request.files:
+                return flask.jsonify({"ok": False, "res_id": "", "message": "Missing file part",
+                                      "formdata": request.form})
+            the_file = request.files[file]
+            if the_file.filename == "":
+                return flask.jsonify({"ok": False, "res_id": "", "message": "No selected file",
+                                      "formdata": request.form})
+        ## TODO: check kmer parameter
+
+        input_file_forward = request.files['forward']
+        input_file_reverse = request.files['reverse']
+        input_file_unpaired = request.files['unpaired']
+        input_kmer = request.form['kmer']
+        if input_kmer == "":
+            input_kmer = "71,73,75,79"
 
         ## RES_DIR will be returned and used later
         RES_DIR = tempfile.mkdtemp()
-        input_file_path = os.path.join(RES_DIR, "INPUT.fastq")
 
-        input_file.save(input_file_path)
+        pipeline_params = {}
+        pipeline_params['RES_DIR'] = RES_DIR
+        pipeline_params['INPUT_forward'] = os.path.join(RES_DIR, "INPUT_forward.fastq")
+        pipeline_params['INPUT_reverse'] = os.path.join(RES_DIR, "INPUT_reverse.fastq")
+        pipeline_params['INPUT_unpaired'] = os.path.join(RES_DIR, "INPUT_unpaired.fastq")
+        pipeline_params['kmer'] = input_kmer
+
+        input_file_forward.save(pipeline_params['INPUT_forward'])
+        input_file_reverse.save(pipeline_params['INPUT_reverse'])
+        input_file_unpaired.save(pipeline_params['INPUT_unpaired'])
+
         update_status(RES_DIR, "init")
-
-        run_pipeline(RES_DIR)
+        run_pipeline(pipeline_params)
         update_status(RES_DIR, "running")
 
         return flask.jsonify({"ok": True, "res_id": base64.b64encode(RES_DIR.encode()).decode(),
-                              "message": ""})
-    return '''
-    <!doctype html>
-    <title>Upload new File (testing)</title>
-    <h1>Upload new File (testing)</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
+                              "message": "", "formdata": request.form,
+                              "pipeline_params": pipeline_params,
+                              "result_link": "/result/" + base64.b64encode(RES_DIR.encode()).decode()})
+    return flask.render_template("upload.html", title = "Start the pipeline")
 
 def ResId2Dir(RES_ID):
     if RES_ID == "test1":
@@ -82,7 +110,7 @@ def ResId2Dir(RES_ID):
 def show_result(RES_ID):
     "OUTPUT.gff3"
     RES_DIR = ResId2Dir(RES_ID)
-    return flask.render_template("result.html", title = "Hello Jinja2", RES_DIR = RES_DIR,
+    return flask.render_template("result.html", title = "Pipeline Result", RES_DIR = RES_DIR,
                                  RES_ID = RES_ID)
 
 @app.route('/result/<RES_ID>/<filename>')
