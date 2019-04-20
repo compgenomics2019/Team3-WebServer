@@ -44,6 +44,7 @@
 				height: 100%;
 				color: white;
 				width: 20%;
+				min-width: 700 px;
 				display: inline-block;
 			}
 			a.fill-div {
@@ -87,6 +88,11 @@
 </script>
 
 <body onload="load()">
+	<div id="top">
+		<div style="transform: translate(-0%, -70%);"><a href="/index.html" class="fill-div">Home</a></div>
+		<div style="transform: translate(-0%, -70%);"><a href="/upload" class="fill-div">Pipeline</a></div>
+		<div style="transform: translate(-0%, -70%);"><a href="/jbrowse.html" class="fill-div">JBrowse</a></div>
+	</div>
     <h2>{{ title }}</h2>
     <h4>Result Directory</h4>
     <div>
