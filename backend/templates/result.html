@@ -103,7 +103,8 @@
 
 				var result = [];
 
-				var headers=lines[0].split("\t");
+				// var headers=lines[0].split("\t");
+				var headers=["CHROM", "SOURCE", "FEATURE", "START", "STOP", "SCORE", "STRAND", "FRAME", "ATTRIBUTE"];
 				console.log(lines[0]);
 				console.log(lines[1]);
 
@@ -124,7 +125,8 @@
 			}
 
 
-			$.get("./annotation.gff3", function(data) {
+			$.get(
+			window.location.pathname + "/annotation.gff3", function(data) {
 						var processed = tsvJSON(data);
 						console.log(processed);
 						$('#table_id').DataTable( {
