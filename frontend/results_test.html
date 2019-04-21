@@ -38,54 +38,7 @@
 	</script>
 		<meta charset="utf-8">
 		<title>Start Pipeline</title>
-		<style>
-			html {
-				height: 100%;
-			}
-			body{
-				height: 100%;
-				width: 100%;
-				background-color: white;
-				margin:0px;
-			}
-			a {
-				text-decoration: none
-			}
-			a:link {
-				color: white;
-			}
-			a:visited {
-				color: white;
-			}
-			div#top{
-				background-color: #232121;
-				height:30px;
-				margin: auto;
-				font-size:36px;
-				padding:20px 0px 0px 20px;
-				fill: gray;
-				position:relative;
-				clear: left;
-				vertical-align: top;
-			}
-			div#top > div{
-				height: 100%;
-				color: white;
-				width: 20%;
-				display: inline-block;
-			}
-			a.fill-div {
-				position: relative;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -40%);
-				display: inline-block;
-				height: 100%;
-				width: 100%;
-				text-decoration: none;
-			}
-
-		</style>
+		<link rel="stylesheet" href="style_result.css">
 	</head>
 
 
@@ -181,15 +134,29 @@
 	</tfoot>
 </table>
 
+<div class="download_button_div">
+    <button class="download_button" onclick="download_gff_file();"><img class="download_image" src="./img/download-icon.png">Download GFF File</img></a>
+</div>
+
 
 <table>
-      <tr>
-        <td>
-          <h2>Phylogenetic Tree</h2>
-          <div id='phylogram'></div>
-        </td>
-      </tr>
+    <tr>
+      <td>
+        <h2>Phylogenetic Tree</h2>
+        <div id='phylogram'></div>
+      </td>
+    </tr>
 </table>
 
 	</body>
 </html>
+
+<script type="text/javascript">
+	function download_gff_file(e){
+		// location = window.location.origin + window.location.pathname + "/annotation.gff3"
+		gff_file_path = window.location.origin + window.location.pathname + "/annotation.gff3"
+		window.location.assign(gff_file_path)
+		// Example
+		// "http://predict2019t3.biosci.gatech.edu/result/L3RtcC90bXAydzF0a3dscg==/annotation.gff3
+	}
+</script>
