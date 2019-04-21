@@ -87,16 +87,83 @@
 		$.get(window.location.pathname + "/LeastDistance.txt", function(data) {
 			console.log(data);
 			var split = data.split(new RegExp("\\s+"));
-			var strain = split[0];
+			var ncbi = split[0];
 			var distance = split[1];
 			console.log(distance);
+			var dict = {
+				"ASM118865": "LM850658",
+				"ASM145488": "WSLC 1020",
+				"ASM19539": "J1-220",
+				"ASM202516": "LI0521",
+				"ASM2118": "HCC23",
+				"ASM220821": "FDA00006907",
+				"ASM228583" : "FDA00011238",
+				"ASM303191": "PIR00546",
+				"ASM30706": "SLCC2376 4c",
+				"ASM381256": "FDAARGOS_554",
+				"ASM145486": "WSLC 1019",
+				"ASM154858": "CFSAN023459",
+				"ASM199904": "10-092876-1155 LM6",
+				"ASM20975": "L99",
+				"ASM21830": "M7",
+				"ASM228565": "FDA00006905",
+				"ASM303040": "CFSAN054108",
+				"ASM303205": "PIR00544",
+				"ASM343341": "CIIMS-PH-1",
+				"ASM43868": "N1-011A"
+			}
+			// Change from ncbi assembly codes to strain names
+			for (var key in dict) {
+				if (ncbi.includes(key)) {
+					strain = ncbi.replace(key, dict[key]);
+				}
+			}
 
 			var para = document.createElement("p");
 			var node = document.createTextNode("Your isolate is most closely related to " + strain + ". The distance between your isolate and " + strain + " is " + distance + ".");
 			para.appendChild(node);
 			var element = document.getElementById("strain");
 			element.appendChild(para);
-
+			
+			// Add JBrowse of closest strain
+			var dataset_ids = [
+				"GCF_000021185_1_ASM2118v1_genomic",
+				"GCF_000195395_4_ASM19539v5_genomic",
+				"GCF_000209755_1_ASM20975v1_genomic",
+				"GCF_000218305_1_ASM21830v1_genomic",
+				"GCF_000307065_1_ASM30706v1_genomic",
+				"GCF_000438685_2_ASM43868v2_genomic",
+				"GCF_001188655_1_ASM118865v1_genomic",
+				"GCF_001454865_1_ASM145486v1_genomic",
+				"GCF_001454885_1_ASM145488v1_genomic",
+				"GCF_001548585_1_ASM154858v1_genomic",
+				"GCF_001999045_1_ASM199904v1_genomic",
+				"GCF_002025165_1_ASM202516v1_genomic",
+				"GCF_002208215_1_ASM220821v1_genomic",
+				"GCF_002285655_1_ASM228565v1_genomic",
+				"GCF_002285835_1_ASM228583v1_genomic",
+				"GCF_003030405_1_ASM303040v1_genomic",
+				"GCF_003031915_1_ASM303191v1_genomic",
+				"GCF_003032055_1_ASM303205v1_genomic",
+				"GCF_003433415_1_ASM343341v1_genomic",
+				"GCF_003812565_1_ASM381256v1_genomic"
+			];
+			var myJbrowse;
+			for (var i in dataset_ids) {
+				var dataset = dataset_ids[i];
+				console.log(dataset);
+				if (dataset.includes(ncbi)) {
+					console.log("INCLUDED");
+					var myJbrowse = document.createElement("iframe");
+					var element = document.getElementById("strain");
+					myJbrowse.setAttribute("src", "/jbrowse/index.html?data=data/" + dataset);
+					myJbrowse.setAttribute("style", "border: 0px solid black");
+					myJbrowse.setAttribute("width", "100%");
+					myJbrowse.setAttribute("height", "400px");
+					element.appendChild(myJbrowse);
+				}
+			}
+			
 		});
 	</script>
 
