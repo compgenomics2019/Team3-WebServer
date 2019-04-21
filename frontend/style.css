@@ -169,3 +169,37 @@ div#textBox {
   text-align: center;
   vertical-align: bottom;
 }
+
+
+
+div.download_button_div {
+  height: 30px;
+  width: 300px;
+  text-transform: uppercase;
+}
+
+img.download_image {
+  width: 15px;
+  height: 15px;
+}
+
+div.download_button_div > .download_button {
+  background-color: white;
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+div.download_button_div > .download_button:hover {
+  background-color: #4CAF50;
+  color: white;
+}

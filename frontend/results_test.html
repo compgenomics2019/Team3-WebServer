@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<link rel="icon" href="img/pattern.jpg">
-	<link rel="stylesheet" type="text/css" href="./style_result.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -83,16 +83,16 @@
 			var split = data.split(" ");
 			var strain = split[0];
 			var distance = split[1];
-			
+
 			var para = document.createElement("p");
 			var node = document.createTextNode("Your isolate is most closely related to " + strain + "\nThe distance between your isolate and " + strain + "is " + distance);
 			para.appendChild(node);
 			var element = document.getElementById("strain");
 			element.appendChild(para);
-			
+
 		});
 	</script>
-		
+
 		<p>GFF Results</p>
 
 <script type="text/javascript">
