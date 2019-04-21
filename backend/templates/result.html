@@ -2,65 +2,16 @@
 <head>
 	<title>{{ title }}</title>
 	<link rel="icon" href="/img/pattern.jpg">
-	
+		<link rel="stylesheet" type="text/css" href="./style_result.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	
+
 	<script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script>
 	<script src="/newick.js" type="text/javascript"></script>
 	<script src="/d3.phylogram.js" type="text/javascript"></script>
-	<style>
-			html {
-				height: 100%;
-			}
-			body{ 
-				height: 100%;
-				width: 100%;
-				background-color: white;
-				margin:0px; 
-			}
-			a {
-				text-decoration: none
-			}
-			a:link {
-				color: white;
-			}
-			a:visited {
-				color: white;
-			}
-			div#top{ 
-				background-color: #232121; 
-				height:30px;
-				margin: auto;
-				font-size:36px; 
-				padding:20px 0px 0px 20px; 
-				fill: gray;
-				position:relative;
-				clear: left;
-				vertical-align: top;
-			}
-			div#top > div{
-				height: 100%;
-				color: white;
-				width: 20%;
-				min-width: 700 px;
-				display: inline-block;
-			}
-			a.fill-div {
-				position: relative;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -40%);
-				display: inline-block;
-				height: 100%;
-				width: 100%;
-				text-decoration: none;
-			}
+	<link rel="stylesheet" href="style_result.css">
 
-	</style>
-	
-	
 </head>
 
 <script>
@@ -104,7 +55,7 @@
 			  }
 			}
 			buildNewickNodes(newick)
-			
+
 			d3.phylogram.build('#phylogram', newick, {
 				width: 300,
 				height: 400
@@ -119,7 +70,7 @@
 		<div style="transform: translate(-0%, -70%);"><a href="/upload" class="fill-div">Pipeline</a></div>
 		<div style="transform: translate(-0%, -70%);"><a href="/jbrowse.html" class="fill-div">JBrowse</a></div>
 	</div>
-	
+
 	<div style="display: none">
 		<h2>{{ title }}</h2>
 		<h4>Result Directory</h4>
@@ -127,11 +78,11 @@
 			{{ RES_DIR }}
 		</div>
 	</div>
-	
+
 	<div id="strain">
 	<h2>Closest Strain</h2>
 	</div>
-	
+
 	<script>
 		$.get(window.location.pathname + "/LeastDistance.txt", function(data) {
 			console.log(data);
@@ -139,7 +90,6 @@
 			var ncbi = split[0];
 			var distance = split[1];
 			console.log(distance);
-			
 			var dict = {
 				"ASM118865": "LM850658",
 				"ASM145488": "WSLC 1020",
@@ -168,7 +118,7 @@
 					strain = ncbi.replace(key, dict[key]);
 				}
 			}
-			
+
 			var para = document.createElement("p");
 			var node = document.createTextNode("Your isolate is most closely related to " + strain + ". The distance between your isolate and " + strain + " is " + distance + ".");
 			para.appendChild(node);
@@ -268,7 +218,7 @@
 		});
 	</script>
 
-	
+
 	<table>
       <tr>
         <td>
@@ -277,7 +227,12 @@
         </td>
       </tr>
 	</table>
-	
+
+	<div class="download_button_div">
+	    <button class="download_button" onclick="download_gff_file();"><img class="download_image" src="./img/download-icon.png">Download GFF File</img></a>
+	</div>
+
+
 	<table id="table_id" class="display">
 		<thead>
 			<tr>
@@ -306,9 +261,9 @@
 			</tr>
 		</tfoot>
 	</table>
-	
-	
-	
+
+
+
     <!-- <script> -->
      <!-- async function load_gff() { -->
          <!-- const gff_file = window.location.pathname + "/OUTPUT.gff3"; -->
@@ -321,3 +276,12 @@
      <!-- load_gff() -->
     <!-- </script> -->
 </body>
+<script type="text/javascript">
+	function download_gff_file(e){
+		// location = window.location.origin + window.location.pathname + "/annotation.gff3"
+		gff_file_path = window.location.origin + window.location.pathname + "/annotation.gff3"
+		window.location.assign(gff_file_path)
+		// Example
+		// "http://predict2019t3.biosci.gatech.edu/result/L3RtcC90bXAydzF0a3dscg==/annotation.gff3
+	}
+</script>

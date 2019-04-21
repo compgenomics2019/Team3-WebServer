@@ -1,10 +1,16 @@
 
 ## Team3 Web Server Group
 
-### Test and Deployment
+### Requirements
 
-Please follow `backend/README.md` to install `venv` and modules
-in `requirements.txt to the `backend` directory.
+The application is built with [Flask](http://flask.pocoo.org/) in python.
+You may use Anaconda to install the python dependencies, the environment yml file is `final.yml`.
+
+```
+conda env create -f final.yml
+```
+
+### Test and Deployment
 
 To test the web application on your own computer, start the flask
 webserver with the following script and open your browser at
@@ -14,16 +20,7 @@ http://localhost:9981/index.html :
 ./serve.sh
 ```
 
-Your code will be automatically (within one minute) deployed to the
-server once you push to the master branch on github.
-However, currently there are some configuration issues with the
-proxy of the server. To use the application on server, please
-run `./server_proxy.sh` and open your browser at
-http://localhost:8864/index.html . The script will setup a
-proxy between your computer and the server port at 9981.
-
-If we need to add dependencies (i.e. python modules) later, just add it to
-`backend/requirements.txt` and push to master.
-The server will handle it automatically.
-
+Your code will be automatically (within one minute) deployed to
+server (http://predict2019t3.biosci.gatech.edu/) once you push the commits to
+the master branch on github.
 
