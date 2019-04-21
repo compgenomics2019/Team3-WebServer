@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <head>
+	<link rel="stylesheet" href="  style.css">
+	<link rel="icon" href="img/pattern.jpg">
+	<meta charset="utf-8">
+	<title>Upload Finish</title>
 </head>
+
 <body>
+		<div id="top">
+			<div style="transform: translate(-0%, -70%);"><a href="index.html" class="fill-div">Home</a></div>
+			<div style="transform: translate(-0%, -70%);"><a href="/upload" class="fill-div">Pipeline</a></div>
+			<div style="transform: translate(-0%, -70%);"><a href="jbrowse.html" class="fill-div">JBrowse</a></div>
+			<div style="transform: translate(-0%, -70%);"><a href="aboutus.html" class="fill-div">About Us</a></div>
+		</div>
+
+
+		<!-- <div id="middle"> -->
+			<!-- <h2 style="color: orange">About</h2> -->
+			<!-- <p style="font: Arial">LASSIE stands for Listeria ASSemblIEs comparison. The goal of LASSIE is strain identification of Listeria isolates and
+			the identification of their antibiotic resistance and virulence factors. Click 'Start Pipeline' to begin!</p> -->
+		<!-- </div> -->
+	<div id="bottom">
     <p>Thanks for submitting your job. You will receive an email to
         <code>{{ params['email'] }}</code> after the job is finished.</p>
     <p>Your job ID is <code>{{ RES_ID }}</code>.</p>
@@ -28,4 +47,11 @@
                 </tr>
             </table>
     </div>
+	</div>
+
+	<div id="footer">
+		<p>© 2019 Team 3 Predictive Webserver Group </a>
+	</div>
+
 </body>
+</html>
