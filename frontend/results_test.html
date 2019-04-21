@@ -38,87 +38,7 @@
 	</script>
 		<meta charset="utf-8">
 		<title>Start Pipeline</title>
-		<style>
-			html {
-				height: 100%;
-			}
-			body{
-				height: 100%;
-				width: 100%;
-				background-color: white;
-				margin:0px;
-			}
-			a {
-				text-decoration: none
-			}
-			a:link {
-				color: white;
-			}
-			a:visited {
-				color: white;
-			}
-			div#top{
-				background-color: #232121;
-				height:30px;
-				margin: auto;
-				font-size:36px;
-				padding:20px 0px 0px 20px;
-				fill: gray;
-				position:relative;
-				clear: left;
-				vertical-align: top;
-			}
-			div#top > div{
-				height: 100%;
-				color: white;
-				width: 20%;
-				display: inline-block;
-			}
-			a.fill-div {
-				position: relative;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -40%);
-				display: inline-block;
-				height: 100%;
-				width: 100%;
-				text-decoration: none;
-			}
-
-			div.download_button_div {
-				height: 30px;
-				width: 300px;
-				text-transform: uppercase;
-			}
-
-			img.download_image {
-				width: 15px;
-				height: 15px;
-			}
-
-			div.download_button_div > .download_button {
-			  background-color: white;
-				border: none;
-			  padding: 16px 32px;
-			  text-align: center;
-			  text-decoration: none;
-			  display: inline-block;
-			  font-size: 16px;
-			  margin: 4px 2px;
-			  -webkit-transition-duration: 0.4s; /* Safari */
-			  transition-duration: 0.4s;
-			  cursor: pointer;
-			  color: black;
-			  border: 2px solid #4CAF50;
-			}
-
-			div.download_button_div > .download_button:hover {
-			  background-color: #4CAF50;
-			  color: white;
-			}
-
-
-		</style>
+		<link rel="stylesheet" href="style_result.css">
 	</head>
 
 
@@ -233,7 +153,9 @@
 
 <script type="text/javascript">
 	function download_gff_file(e){
-		location = window.location.origin + window.location.pathname + "/annotation.gff3"
+		// location = window.location.origin + window.location.pathname + "/annotation.gff3"
+		gff_file_path = window.location.origin + window.location.pathname + "/annotation.gff3"
+		window.location.assign(gff_file_path)
 		// Example
 		// "http://predict2019t3.biosci.gatech.edu/result/L3RtcC90bXAydzF0a3dscg==/annotation.gff3
 	}
