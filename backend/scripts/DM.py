@@ -40,8 +40,12 @@ for i in range(len(List_3)):
             List_Main[i].append(List_2[j])
 
 FinalOutput = '\t' + str(len(List_Main)) + '\n'
-for x in List_Main:
-    FinalOutput = FinalOutput + List_3[List_Main.index(x)].ljust(10) + '\t' + " ".join(x) + '\n'
+
+for x in range(len(List_Main)):
+    FinalOutput = FinalOutput + List_3[x].ljust(10) + '\t' + " ".join(List_Main[x]) + '\n'
+    
+#for x in List_Main:
+#    FinalOutput = FinalOutput + List_3[List_Main.index(x)].ljust(10) + '\t' + " ".join(x) + '\n'
 
 FinalFile = open('infile', 'w')
 FinalFile.write(FinalOutput)
