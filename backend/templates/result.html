@@ -124,12 +124,33 @@
     <div>
         {{ RES_DIR }}
     </div>
+	
+	<div id="strain">
+	<h2>Closest Strain</h2>
+	</div>
+	
     <div>
         <p>Check <a href="/result/test1">sample result page</a></p>
     </div>
-
+	
     <pre id="testgff">
     </pre>
+	<script>
+		$.get(window.location.pathname + "/LeastDistance.txt", function(data) {
+			console.log(data);
+			var split = data.split(new RegExp("\\s+"));
+			var strain = split[0];
+			var distance = split[1];
+			console.log(distance);
+			
+			var para = document.createElement("p");
+			var node = document.createTextNode("Your isolate is most closely related to " + strain + ". The distance between your isolate and " + strain + " is " + distance + ".");
+			para.appendChild(node);
+			var element = document.getElementById("strain");
+			element.appendChild(para);
+			
+		});
+	</script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -182,6 +203,16 @@
 		});
 	</script>
 
+	
+	<table>
+      <tr>
+        <td>
+          <h2>Phylogenetic Tree</h2>
+          <div id='phylogram'></div>
+        </td>
+      </tr>
+	</table>
+	
 	<table id="table_id" class="display">
 		<thead>
 			<tr>
@@ -210,15 +241,6 @@
 			</tr>
 		</tfoot>
 	</table>
-	
-<table>
-      <tr>
-        <td>
-          <h2>Phylogenetic Tree</h2>
-          <div id='phylogram'></div>
-        </td>
-      </tr>
-</table>
 	
 	
 	
