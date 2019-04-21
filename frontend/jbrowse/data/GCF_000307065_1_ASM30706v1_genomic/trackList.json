@@ -10,6 +10,18 @@
          "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
          "type" : "SequenceTrack",
          "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-"
+      },
+      {
+         "compress" : 0,
+         "key" : "GFF_GCF_000307065_1_ASM30706v1_genomic",
+         "label" : "GFF_GCF_000307065_1_ASM30706v1_genomic",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "style" : {
+            "className" : "feature"
+         },
+         "trackType" : null,
+         "type" : "FeatureTrack",
+         "urlTemplate" : "tracks/GFF_GCF_000307065_1_ASM30706v1_genomic/{refseq}/trackData.json"
       }
    ]
 }
