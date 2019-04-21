@@ -119,22 +119,19 @@
 		<div style="transform: translate(-0%, -70%);"><a href="/upload" class="fill-div">Pipeline</a></div>
 		<div style="transform: translate(-0%, -70%);"><a href="/jbrowse.html" class="fill-div">JBrowse</a></div>
 	</div>
-    <h2>{{ title }}</h2>
-    <h4>Result Directory</h4>
-    <div>
-        {{ RES_DIR }}
-    </div>
+	
+	<div style="display: none">
+		<h2>{{ title }}</h2>
+		<h4>Result Directory</h4>
+		<div>
+			{{ RES_DIR }}
+		</div>
+	</div>
 	
 	<div id="strain">
 	<h2>Closest Strain</h2>
 	</div>
 	
-    <div>
-        <p>Check <a href="/result/test1">sample result page</a></p>
-    </div>
-	
-    <pre id="testgff">
-    </pre>
 	<script>
 		$.get(window.location.pathname + "/LeastDistance.txt", function(data) {
 			console.log(data);
