@@ -142,7 +142,7 @@ a.fill-div {
 .bg {
   /* The image used */
   background-color: DimGray;
-  background-image: url("img/pattern.jpg");
+  background-image: url("img/listeria.jpg");
 
   /* Full height */
   height: 60%;
@@ -162,6 +162,7 @@ a.fill-div {
 div#textBox {
   background-color: rgb(56, 49, 39,  0.9);
   margin: 0;
+  padding: 10px;
   position: relative;
   top: 50%;
   left: 50%;
