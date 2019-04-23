@@ -174,8 +174,9 @@ div#textBox {
 
 
 div.download_button_div {
-  height: 30px;
+  height: 150px;
   width: 300px;
+  margin-bottom: 50px;
   text-transform: uppercase;
 }
 
